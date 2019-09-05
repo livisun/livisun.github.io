@@ -19,10 +19,11 @@
     <link rel="dns-prefetch" href="http://livisun.gitgub.io">
     <!--SEO-->
 
-<meta name="keywords" content>
+<meta name="keywords" content="hexo">
 
 
-<meta name="description" content>
+<meta name="description" content="
+最近搞了一个线上文档，参考了https://cn.vuejs.org/vue中文网站的风格，才知道他们用hexo搭建的，之前我用Jekyll搭的 ，要配置很多环境，感觉不如hexo好用，于是就...">
 
 
 <meta name="robots" content="all">
@@ -33,7 +34,7 @@
 
 <title>
     
-    标签: 小技巧 |
+    记本博客搭建过程 |
     
     livisun&#39;s blog
 </title>
@@ -153,172 +154,144 @@
     <section class="content-wrap">
         <div class="container">
             <div class="row">
-                <main class="col-md-8 main-content ">
-                    <ol class="breadcrumb">
-    
-    <li>
-        小技巧
-    </li>
-    
-    
-</ol>
-
+                <main class="col-md-8 main-content m-post">
+                    <p id="process"></p>
 <article class="post">
+    <div class="post-head">
+        <h1 id="记本博客搭建过程">
+            
+            记本博客搭建过程
+            
+        </h1>
+        <div class="post-meta">
     
-    <div class="post-content">
-        <div class="post-head home-post-head">
-            <h1 class="post-title">
-                <a href="/2019/09/05/快速删除node-modules文件夹/">
-                    快速删除node_modules文件夹</a>
-            </h1>
-            <div class="post-meta"> &bull;
-                <time class="post-date" datetime="" title="">
-                    2019年09月05日
-                </time>
-            </div>
+    <span class="categories-meta fa-wrap">
+        <i class="fa fa-folder-open-o"></i>
+        <a class="category-link" href="/categories/随笔/">随笔</a>
+    </span>
+    
+    
+    <span class="fa-wrap">
+        <i class="fa fa-tags"></i>
+        <span class="tags-meta">
+            
+            <a class="tag-link" href="/tags/hexo/">hexo</a>
+            
+        </span>
+    </span>
+    
+    
+    
+    <span class="fa-wrap">
+        <i class="fa fa-clock-o"></i>
+        <span class="date-meta">
+            2019/09/05</span>
+    </span>
+    
+    
+</div>
+        
+        
+    </div>
+    
+    <div class="post-body post-content">
+        <blockquote>
+<p>最近搞了一个线上文档，参考了<a href="https://cn.vuejs.org/" target="_blank" rel="noopener">https://cn.vuejs.org/</a>vue中文网站的风格，才知道他们用<a href="https://hexo.io/zh-cn/" target="_blank" rel="noopener">hexo</a>搭建的，之前我用<a href="https://jekyllrb.com/" target="_blank" rel="noopener">Jekyll</a>搭的 ，要配置很多环境，感觉不如hexo好用，于是就有了这个<code>新博客</code>,废话不多说，我们直接开始搭建过程。</p>
+</blockquote>
+<h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><p><em>win7用户，按顺序搞就完了，假如因为系统环境或者node版本什么的导致下列哪个安装失败了，请自行百度或者访问官网解决，我们这里认为都是直接成功的。</em></p>
+<ul>
+<li>安装node环境;<br>我记得很久之前在简书上写过一篇，写的有点啰嗦，你只要安装一下就行,版本管理啥的，直接跳过。<a href="https://www.jianshu.com/p/81102b9b3b36" target="_blank" rel="noopener">传送</a></li>
+<li>一个github账号;<br>没有赶紧去<a href="https://github.com/" target="_blank" rel="noopener">注册</a> 要是搞不定，<a href="https://blog.csdn.net/weixin_42693104/article/details/82584849" target="_blank" rel="noopener">点我</a></li>
+<li>安装hexo;<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install -g hexo-cli</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h2 id="创建一个git仓库"><a href="#创建一个git仓库" class="headerlink" title="创建一个git仓库"></a>创建一个git仓库</h2><p>打开你的git仓库，新建一个仓库，注意仓库名称一定是<font color="#FF0000"> {你的用户名}.github.io</font> ，如图所示 <img src="/imgages/1567671016.jpg" alt></p>
+
+    </div>
+    
+    <div class="reward" ontouchstart>
+    <div class="reward-wrap">赏
+        <div class="reward-box">
+            
+            <span class="reward-type">
+                <img class="alipay" src="/img/zfb.png"><b>支付宝打赏</b>
+            </span>
+            
+            
+            <span class="reward-type">
+                <img class="wechat" src=" /img/wx.png"><b>微信打赏</b>
+            </span>
+            
         </div>
-        <p class="brief">
+    </div>
+    <p class="reward-tip">
+        假如你刚好有兴趣请我喝杯奶茶
+    </p>
+</div>
+    
+    <div class="post-footer">
+        <div>
             
-            现在前端框架经常会用到npm包管理器来管理依赖，但是很多包更新非常频繁，导致不兼容问题，又或者自己引入了一些包,后面又不用了，又或者某个包出了问题，总之导致项目运行有一点问题，我就想把node_modules包删掉，重新执行 npm ...
+            转载声明：
+            商业转载请联系作者获得授权,非商业转载请注明出处 © <a href="" target="_blank">livisun</a>
             
-        </p>
+            
+        </div>
+        <div>
+            
+        </div>
     </div>
 </article>
+<div class="article-nav prev-next-wrap clearfix">
+    
+    
+    <a href="/2019/09/05/快速删除node-modules文件夹/" class="next-post btn btn-default" title='快速删除node_modules文件夹'>
+        <span class="hidden-lg">下一篇</span>
+        <span class="hidden-xs">
+            快速删除node_modules文件夹</span><i class="fa fa-angle-right fa-fw"></i>
+    </a>
+    
+</div>
 
+<div id="comments">
+    
+
+<div id="vcomments" class="valine"></div>
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="/assets/valine.min.js"></script>
+<script>
+new Valine({
+    av: AV,
+    el: '#vcomments',
+    appId: 'PFF3iz6l46WOQXhWBVPX22um-gzGzoHsz',
+    appKey: 'aQNed97fCoI0PTI26eDHdtBe',
+    placeholder: '说点什么吧',
+    notify: false,
+    verify: true,
+    avatar: 'mm',
+    meta: 'nick,mail'.split(','),
+    pageSize: '10',
+    path: window.location.pathname,
+    lang: 'zh-CN'.toLowerCase()
+})
+</script>
+
+
+</div>
 
                 </main>
                 
-                    
-<aside class="col-md-4 sidebar">
-    
-    
-<div class="widget">
-    <h3 class="title">
-        搜索
-    </h3>
-    <div id="search-form">
-        <div id="result-mask" class="hide"></div>
-        <div class="search-area">
-            
-            <input id="search-key" type="search" autocomplete="off" placeholder="搜点什么呢？">
-            <button type="button" class="search-form-submit" id="search-local">
-                站内搜索</button>
-            
-            
-        </div>
-        <div id="result-wrap" class="hide">
-            <div id="search-result"></div>
-        </div>
-        <div class="hide">
-            <template id="search-tpl">
-                <div class="item">
-                    <a href="/{path}" title="{title}">
-                        <div class="title">{title}</div>
-                        <div class="content">{content}</div>
-                    </a>
-                </div>
-            </template>
-        </div>
-    </div>
-</div>
-
-    
-    
-<div class="widget">
-    <h3 class="title">
-        我最近在折腾
-    </h3>
-    <div class="notification">
-        <p>
-  <a href="https://ustbhuangyi.github.io/vue-analysis" target="_blank" >Vue源码学习</a> <br/>
-  <a href="https://blog.just4fun.site/Scratch3_api_analysis.html" target="_blank">scratch3 源码分析</a> <br/>
-</p>
-    </div>
-</div>
-
-    
-    
-<div class="widget">
-    <h3 class="title">
-        社交
-    </h3>
-    <div class="content social">
+                    <aside id="article-toc" role="navigation" class="col-md-4">
+    <div class="widget">
+        <h3 class="title">
+            文章目录
+        </h3>
         
-        <a href="//github.com/livisun" rel="external nofollow" title="Github" target="_blank">
-            <i class="git fa fa-git"></i>
-        </a>
-        
-        <a href="mailto:1105432766@qq.com" rel="external nofollow" title="邮箱" target="_blank">
-            <i class="envelope-o fa fa-envelope-o"></i>
-        </a>
-        
-        <a href="tencent://message/?uin=1105432766" rel="external nofollow" title="联系QQ" target="_blank">
-            <i class="qq fa fa-qq"></i>
-        </a>
-        
-        <a href="/" rel="external nofollow" title="微信" target="_blank">
-            <i class="weixin fa fa-weixin"></i>
-        </a>
-        
-        <a href="/" rel="external nofollow" title="QQ群" target="_blank">
-            <i class="users fa fa-users"></i>
-        </a>
-        
-        <a href="/atom.xml" rel="external nofollow" title="RSS" target="_blank">
-            <i class="feed fa fa-feed"></i>
-        </a>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#准备工作"><span class="toc-text">准备工作</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#创建一个git仓库"><span class="toc-text">创建一个git仓库</span></a></li></ol>
         
     </div>
-</div>
-
-    
-    
-<div class="widget">
-    <h3 class="title">
-        分类
-    </h3>
-    <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/编程/"><i class="fa" aria-hidden="true">编程</i></a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/随笔/"><i class="fa" aria-hidden="true">随笔</i></a><span class="category-list-count">1</span></li></ul>
-</div>
-
-    
-    
-<div class="widget">
-    <h3 class="title">
-        归档
-    </h3>
-    <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/09/"><i class="fa" aria-hidden="true">2019年09月</i></a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/08/"><i class="fa" aria-hidden="true">2019年08月</i></a><span class="archive-list-count">1</span></li></ul>
-</div>
-
-    
-    
-<div class="widget">
-    <h3 class="title">
-        标签云
-    </h3>
-    <div class="content tag-cloud">
-        
-        <a href="/tags/axios/" style="font-size: 10px;">axios</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/小技巧/" style="font-size: 10px;">小技巧</a>
-        
-    </div>
-</div>
-
-    
-    
-<div class="widget">
-    <h3 class="title">
-        友链
-    </h3>
-    <div class="content friends-link">
-        
-        <a href="https://hexo.io/zh-cn/" class="fa" target="_blank">
-            Hexo官网</a>
-        
-    </div>
-</div>
-
-    
 </aside>
-
                 
             </div>
         </div>
@@ -354,8 +327,6 @@
         </div>
     </div>
 </div>
-
-<script src="/js/search.js?rev=@@hash"></script>
 
 
 
