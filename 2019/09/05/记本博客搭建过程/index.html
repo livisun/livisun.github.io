@@ -23,7 +23,7 @@
 
 
 <meta name="description" content="
-最近搞了一个线上文档，参考了https://cn.vuejs.org/vue中文网站的风格，才知道他们用hexo搭建的，之前我用Jekyll搭的 ，要配置很多环境，感觉不如hexo好用，于是就...">
+最近搞了一个线上文档，参考了vuejs.orgvue中文网站的风格，才知道他们用hexo搭建的，之前我用Jekyll搭的 ，要配置很多环境，感觉不如hexo好用，于是就有了这个新博客,废话不多...">
 
 
 <meta name="robots" content="all">
@@ -196,9 +196,10 @@
     
     <div class="post-body post-content">
         <blockquote>
-<p>最近搞了一个线上文档，参考了<a href="https://cn.vuejs.org/" target="_blank" rel="noopener">https://cn.vuejs.org/</a>vue中文网站的风格，才知道他们用<a href="https://hexo.io/zh-cn/" target="_blank" rel="noopener">hexo</a>搭建的，之前我用<a href="https://jekyllrb.com/" target="_blank" rel="noopener">Jekyll</a>搭的 ，要配置很多环境，感觉不如hexo好用，于是就有了这个<code>新博客</code>,废话不多说，我们直接开始搭建过程。</p>
+<p>最近搞了一个线上文档，参考了<a href="https://cn.vuejs.org/" target="_blank" rel="noopener">vuejs.org</a>vue中文网站的风格，才知道他们用<a href="https://hexo.io/zh-cn/" target="_blank" rel="noopener">hexo</a>搭建的，之前我用<a href="https://jekyllrb.com/" target="_blank" rel="noopener">Jekyll</a>搭的 ，要配置很多环境，感觉不如hexo好用，于是就有了这个新博客,废话不多说，我们直接开始搭建过程。</p>
 </blockquote>
-<h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><p><em>win7用户，按顺序搞就完了，假如因为系统环境或者node版本什么的导致下列哪个安装失败了，请自行百度或者访问官网解决，我们这里认为都是直接成功的。</em></p>
+<h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><hr>
+<p><em>win7用户，按顺序搞就完了，假如因为系统环境或者node版本什么的导致下列哪个安装失败了，请自行百度或者访问官网解决，我们这里认为都是直接成功的。</em></p>
 <ul>
 <li>安装node环境;<br>我记得很久之前在简书上写过一篇，写的有点啰嗦，你只要安装一下就行,版本管理啥的，直接跳过。<a href="https://www.jianshu.com/p/81102b9b3b36" target="_blank" rel="noopener">传送</a></li>
 <li>一个github账号;<br>没有赶紧去<a href="https://github.com/" target="_blank" rel="noopener">注册</a> 要是搞不定，<a href="https://blog.csdn.net/weixin_42693104/article/details/82584849" target="_blank" rel="noopener">点我</a></li>
@@ -206,7 +207,12 @@
 
 </li>
 </ul>
-<h2 id="创建一个git仓库"><a href="#创建一个git仓库" class="headerlink" title="创建一个git仓库"></a>创建一个git仓库</h2><p>打开你的git仓库，新建一个仓库，注意仓库名称一定是<font color="#FF0000"> {你的用户名}.github.io</font> ，如图所示 <img src="/images/1567671016.jpg" alt></p>
+<br>
+<br> 
+
+<h2 id="创建一个git仓库"><a href="#创建一个git仓库" class="headerlink" title="创建一个git仓库"></a>创建一个git仓库</h2><hr>
+<p>打开你的git仓库，新建一个仓库，注意仓库名称一定是<font color="#FF0000"> username.github.io</font> 其中<code>username</code>是你的github用户名，如图所示 <img src="/images/img1.png" alt>,这是github page的托管站点创建规则。不信？你可以不按这个规则试一试，这是<a href="https://pages.github.com/" target="_blank" rel="noopener">官方说明</a></p>
+<p>这样，未来我们博客搭建完成并托管在github page之后，就可以通过<code>username.github.io</code>来访问。当然你要是觉得这个域名有点low，不符合你高大威猛的形象。别担心，github也是充分体谅有自己个性域名的小伙伴的。<br><br>在域名控制台，例如阿里云的域名管理界面，找到域名解析设置，分别设置<code>A</code>(将域名指向一个IPV4地址)和<code>CNAME</code>(将域名指向另一个域名)类型。</p>
 
     </div>
     
