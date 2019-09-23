@@ -19,16 +19,15 @@
     <link rel="dns-prefetch" href="http://livisun.gitgub.io">
     <!--SEO-->
 
-<meta name="keywords" content="实用工具">
+<meta name="keywords" content="vue">
 
 
 <meta name="description" content="
-图片压缩工具：tinypng
-图标下载/制作： easyicon
-表格生成器：tableconvert.com
-API数据接口：聚合数据
-在线作图：ProcessOn
-前端demo托管:cod...">
+转载自知乎-vue作者尤雨溪的建议。原文链接
+
+起步
+扎实的 JavaScript / HTML / CSS 基本功。这是前置条件。
+通读官方教程 (guide) 的基础篇。不要用任何构建工具...">
 
 
 <meta name="robots" content="all">
@@ -39,7 +38,7 @@ API数据接口：聚合数据
 
 <title>
     
-    分享收藏的一些站点 |
+    vue学习路线 |
     
     livisun&#39;s blog
 </title>
@@ -163,16 +162,16 @@ API数据接口：聚合数据
                     <p id="process"></p>
 <article class="post">
     <div class="post-head">
-        <h1 id="分享收藏的一些站点">
+        <h1 id="vue学习路线">
             
-            分享收藏的一些站点
+            vue学习路线
             
         </h1>
         <div class="post-meta">
     
     <span class="categories-meta fa-wrap">
         <i class="fa fa-folder-open-o"></i>
-        <a class="category-link" href="/categories/工具/">工具</a>
+        <a class="category-link" href="/categories/编程/">编程</a>
     </span>
     
     
@@ -180,7 +179,7 @@ API数据接口：聚合数据
         <i class="fa fa-tags"></i>
         <span class="tags-meta">
             
-            <a class="tag-link" href="/tags/实用工具/">实用工具</a>
+            <a class="tag-link" href="/tags/vue/">vue</a>
             
         </span>
     </span>
@@ -190,7 +189,7 @@ API数据接口：聚合数据
     <span class="fa-wrap">
         <i class="fa fa-clock-o"></i>
         <span class="date-meta">
-            2019/09/09</span>
+            2019/09/16</span>
     </span>
     
     
@@ -200,23 +199,32 @@ API数据接口：聚合数据
     </div>
     
     <div class="post-body post-content">
-        <ol>
-<li>图片压缩工具：<a href="https://tinypng.com/" target="_blank" rel="noopener">tinypng</a></li>
-<li>图标下载/制作： <a href="https://www.easyicon.net/" target="_blank" rel="noopener">easyicon</a></li>
-<li>表格生成器：<a href="https://tableconvert.com/" target="_blank" rel="noopener">tableconvert.com</a></li>
-<li>API数据接口：<a href="https://www.juhe.cn/" target="_blank" rel="noopener">聚合数据</a></li>
-<li>在线作图：<a href="https://www.processon.com" target="_blank" rel="noopener">ProcessOn</a></li>
-<li>前端demo托管:<a href="https://codepen.io" target="_blank" rel="noopener">codePen</a></li>
-<li>JSON在线编辑:<a href="https://jsoneditoronline.org/" target="_blank" rel="noopener">JSON Editor Online</a></li>
-<li>AST在线语法树解析：<a href="https://astexplorer.net/" target="_blank" rel="noopener">AST Explorer</a></li>
-<li>免费的数据存储、实时消息、统计分析等一站式云服务：<a href="https://www.jianshu.com" target="_blank" rel="noopener">LeanCloud</a></li>
-<li>站点内容搜索：<a href="https://community.algolia.com/docsearch/" target="_blank" rel="noopener">algolia-DocSerach</a></li>
-<li>前端中文文档集合：<a href="https://docschina.org/" target="_blank" rel="noopener">印记中文</a></li>
-<li>万本书籍，持续学习：<a href="http://book.wawo.xyz/" target="_blank" rel="noopener">WAWO</a></li>
-<li>阿里一站式可视化工作台：<a href="https://ice.work/" target="_blank" rel="noopener">飞冰</a></li>
-<li>阮一峰老师教学文档(建设中))：<a href="http://www.wangdoc.com/" target="_blank" rel="noopener">网道</a></li>
-<li>在线英语学习：<a href="https://bbc.enfamily.cn/" target="_blank" rel="noopener">BBC Leran English</a></li>
-<li>视频聚合搜索：<a href="https://biedian.me/" target="_blank" rel="noopener">磁力搜</a></li>
+        <blockquote>
+<p>转载自知乎-vue作者尤雨溪的建议。<a href="https://zhuanlan.zhihu.com/p/23134551" target="_blank" rel="noopener">原文链接</a></p>
+</blockquote>
+<h2 id="起步"><a href="#起步" class="headerlink" title="起步"></a>起步</h2><ol>
+<li>扎实的 JavaScript / HTML / CSS 基本功。这是前置条件。</li>
+<li>通读官方教程 (guide) 的基础篇。不要用任何构建工具，就只用最简单的 ，把教程里的例子模仿一遍，理解用法。<strong>不推荐上来就直接用 vue-cli 构建项目，尤其是如果没有 Node/Webpack 基础。</strong></li>
+<li>照着官网上的示例，自己想一些类似的例子，模仿着实现来练手，加深理解。</li>
+<li>阅读官方教程进阶篇的前半部分，到『自定义指令 (Custom Directive) 』为止。着重理解 Vue 的响应式机制和组件生命周期。『渲染函数（Render Function)』如果理解吃力可以先跳过。</li>
+<li>阅读教程里关于路由和状态管理的章节，然后根据需要学习 vue-router 和 vuex。同样的，先不要管构建工具，以跟着文档里的例子理解用法为主。</li>
+<li>走完基础文档后，如果你对于基于 Node 的前端工程化不熟悉，就需要补课了。下面这些严格来说并不是 Vue 本身的内容，也不涵盖所有的前端工程化知识，但对于大型的 Vue 工程是前置条件，也是合格的『前端工程师』应当具备的知识。</li>
+</ol>
+<h2 id="前端生态-工程化"><a href="#前端生态-工程化" class="headerlink" title="前端生态/工程化"></a>前端生态/工程化</h2><ol>
+<li>了解 JavaScript 背后的规范，ECMAScript 的历史和目前的规范制定方式。学习 ES2015/16 的新特性，理解 ES2015 modules，适当关注<a href="https://github.com/tc39/proposals" target="_blank" rel="noopener">还未成为标准的提案</a>。</li>
+<li>学习命令行的使用。建议用 Mac。</li>
+<li>学习 Node.js 基础。<strong>建议使用 nvm 这样的工具来管理机器上的 Node 版本，并且将 npm 的 registry 注册表配置为<a href="https://npm.taobao.org/" target="_blank" rel="noopener">淘宝的镜像源</a></strong>。至少要了解 npm 的常用命令，npm scripts 如何使用，语义化版本号规则，CommonJS 模块规范（了解它和 ES2015 Modules 的异同），Node 包的解析规则，以及 Node 的常用 API。应当做到可以自己写一些基本的命令行程序。注意最新版本的 Node (6+) 已经支持绝大部分 ES2015 的特性，可以借此巩固 ES2015。</li>
+<li>了解如何使用 / 配置 Babel 来将 ES2015 编译到 ES5 用于浏览器环境</li>
+<li>学习 Webpack。Webpack 是一个极其强大同时也复杂的工具，作为起步，理解它的『一切皆模块』的思想，并基本了解其常用配置选项和 loader 的概念/使用方法即可，比如如何搭配 Webpack 使用 Babel。学习 Webpack 的一个挑战在于其本身文档的混乱，建议多搜索搜索，应该还是有质量不错的第三方教程的。英文好的建议阅读 <a href="https://webpack.js.org/guides/getting-started/" target="_blank" rel="noopener">Webpack 2.0 的文档</a>，比起 1.0 有极大的改善，但需要注意和 1.0 的不兼容之处。</li>
+</ol>
+<h2 id="vue进阶"><a href="#vue进阶" class="headerlink" title="vue进阶"></a>vue进阶</h2><ol>
+<li>有了 Node 和 Webpack 的基础，可以通过 vue-cli 来搭建基于 Webpack ，并且支持单文件组件的项目了。建议用 webpack-simple 这个模板开始，并阅读官方教程进阶篇剩余的内容以及 <a href="https://vue-loader.vuejs.org/" target="_blank" rel="noopener">vue-loader</a> 的文档，了解一些进阶配置。有兴趣的可以自己亲手从零开始搭一个项目加深理解。</li>
+<li>根据 <a href="https://github.com/vuejs/vue-hackernews-2.0" target="_blank" rel="noopener">例子</a> 尝试在 Webpack 模板基础上整合 vue-router 和 vuex.</li>
+<li>深入理解 Virtual DOM 和『渲染函数 (Render Functions)』这一章节（可选择性使用 JSX)，理解模板和渲染函数之间的对应关系，了解其使用方法和适用场景。</li>
+<li>（可选）根据需求，了解服务端渲染的使用（需要配合 Node 服务器开发的知识）。其实更重要的是理解它所解决的问题并搞清楚你是否需要它。</li>
+<li>阅读开源的 Vue 应用、组件、插件源码，自己尝试编写开源的 Vue 组件、插件。</li>
+<li>参考 <a href="https://github.com/vuejs/vue/blob/dev/.github/CONTRIBUTING.md#development-setup" target="_blank" rel="noopener">贡献指南</a> 阅读 Vue 的源码，理解内部实现细节。（需要了解 <a href="https://flow.org/" target="_blank" rel="noopener">Flow</a>）</li>
+<li>参与 Vue GitHub issue 的定位 -&gt; 贡献 PR -&gt; 加入核心团队 -&gt; 升任 CTO -&gt; 迎娶白富美…</li>
 </ol>
 
     </div>
@@ -256,17 +264,11 @@ API数据接口：聚合数据
 </article>
 <div class="article-nav prev-next-wrap clearfix">
     
-    <a href="/2019/09/15/node自动重启工具——nodemon/" class="pre-post btn btn-default" title='node自动重启工具——nodemon'>
-        <i class="fa fa-angle-left fa-fw"></i><span class="hidden-lg">上一篇</span>
-        <span class="hidden-xs">
-            node自动重启工具——nodemon</span>
-    </a>
     
-    
-    <a href="/2019/09/05/记本博客搭建过程/" class="next-post btn btn-default" title='记本博客搭建过程'>
+    <a href="/2019/09/15/node自动重启工具——nodemon/" class="next-post btn btn-default" title='node自动重启工具——nodemon'>
         <span class="hidden-lg">下一篇</span>
         <span class="hidden-xs">
-            记本博客搭建过程</span><i class="fa fa-angle-right fa-fw"></i>
+            node自动重启工具——nodemon</span><i class="fa fa-angle-right fa-fw"></i>
     </a>
     
 </div>
@@ -305,7 +307,7 @@ new Valine({
             文章目录
         </h3>
         
-        <p>暂无目录</p>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#起步"><span class="toc-text">起步</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#前端生态-工程化"><span class="toc-text">前端生态/工程化</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#vue进阶"><span class="toc-text">vue进阶</span></a></li></ol>
         
     </div>
 </aside>

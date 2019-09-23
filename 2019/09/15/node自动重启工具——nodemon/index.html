@@ -19,16 +19,11 @@
     <link rel="dns-prefetch" href="http://livisun.gitgub.io">
     <!--SEO-->
 
-<meta name="keywords" content="实用工具">
+<meta name="keywords" content="node.js">
 
 
 <meta name="description" content="
-图片压缩工具：tinypng
-图标下载/制作： easyicon
-表格生成器：tableconvert.com
-API数据接口：聚合数据
-在线作图：ProcessOn
-前端demo托管:cod...">
+现在nodejs作为轻量级的后台，越来越受欢迎，尤其在前端写demo的时候，直接koa框架一来，写几个api就能测试demo了。然而因为是demo，需要频繁修改接口，增加功能，修改代码之后，需...">
 
 
 <meta name="robots" content="all">
@@ -39,7 +34,7 @@ API数据接口：聚合数据
 
 <title>
     
-    分享收藏的一些站点 |
+    node自动重启工具——nodemon |
     
     livisun&#39;s blog
 </title>
@@ -163,9 +158,9 @@ API数据接口：聚合数据
                     <p id="process"></p>
 <article class="post">
     <div class="post-head">
-        <h1 id="分享收藏的一些站点">
+        <h1 id="node自动重启工具——nodemon">
             
-            分享收藏的一些站点
+            node自动重启工具——nodemon
             
         </h1>
         <div class="post-meta">
@@ -180,7 +175,7 @@ API数据接口：聚合数据
         <i class="fa fa-tags"></i>
         <span class="tags-meta">
             
-            <a class="tag-link" href="/tags/实用工具/">实用工具</a>
+            <a class="tag-link" href="/tags/node-js/">node.js</a>
             
         </span>
     </span>
@@ -190,7 +185,7 @@ API数据接口：聚合数据
     <span class="fa-wrap">
         <i class="fa fa-clock-o"></i>
         <span class="date-meta">
-            2019/09/09</span>
+            2019/09/15</span>
     </span>
     
     
@@ -200,24 +195,34 @@ API数据接口：聚合数据
     </div>
     
     <div class="post-body post-content">
-        <ol>
-<li>图片压缩工具：<a href="https://tinypng.com/" target="_blank" rel="noopener">tinypng</a></li>
-<li>图标下载/制作： <a href="https://www.easyicon.net/" target="_blank" rel="noopener">easyicon</a></li>
-<li>表格生成器：<a href="https://tableconvert.com/" target="_blank" rel="noopener">tableconvert.com</a></li>
-<li>API数据接口：<a href="https://www.juhe.cn/" target="_blank" rel="noopener">聚合数据</a></li>
-<li>在线作图：<a href="https://www.processon.com" target="_blank" rel="noopener">ProcessOn</a></li>
-<li>前端demo托管:<a href="https://codepen.io" target="_blank" rel="noopener">codePen</a></li>
-<li>JSON在线编辑:<a href="https://jsoneditoronline.org/" target="_blank" rel="noopener">JSON Editor Online</a></li>
-<li>AST在线语法树解析：<a href="https://astexplorer.net/" target="_blank" rel="noopener">AST Explorer</a></li>
-<li>免费的数据存储、实时消息、统计分析等一站式云服务：<a href="https://www.jianshu.com" target="_blank" rel="noopener">LeanCloud</a></li>
-<li>站点内容搜索：<a href="https://community.algolia.com/docsearch/" target="_blank" rel="noopener">algolia-DocSerach</a></li>
-<li>前端中文文档集合：<a href="https://docschina.org/" target="_blank" rel="noopener">印记中文</a></li>
-<li>万本书籍，持续学习：<a href="http://book.wawo.xyz/" target="_blank" rel="noopener">WAWO</a></li>
-<li>阿里一站式可视化工作台：<a href="https://ice.work/" target="_blank" rel="noopener">飞冰</a></li>
-<li>阮一峰老师教学文档(建设中))：<a href="http://www.wangdoc.com/" target="_blank" rel="noopener">网道</a></li>
-<li>在线英语学习：<a href="https://bbc.enfamily.cn/" target="_blank" rel="noopener">BBC Leran English</a></li>
-<li>视频聚合搜索：<a href="https://biedian.me/" target="_blank" rel="noopener">磁力搜</a></li>
+        <blockquote>
+<p>现在nodejs作为轻量级的后台，越来越受欢迎，尤其在前端写demo的时候，直接koa框架一来，写几个api就能测试demo了。然而因为是demo，需要频繁修改接口，增加功能，修改代码之后，需要手动close，然后在start，以前觉得nodejs挺方便了，这点小毛病可以克服，直到遇见了<code>nodemon</code>这个工具，舒服~~</p>
+</blockquote>
+<p>先来介绍一下这个工具：nodemon会在服务启动后，监视源代码的任何更改，当你保存修改过的代码之后，将自动重启。详细资料，请查看<a href="https://nodemon.io/" target="_blank" rel="noopener">官方文档</a>。</p>
+<p>使用也很简单：</p>
+<ol>
+<li>全局安装 nodemon：</li>
 </ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g nodemon</span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li>编写nodejs 后台，这里使用koa框架(需要安装koa依赖<code>npm install koa</code>)</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">// app.js</span><br><span class="line"></span><br><span class="line">const Koa = require(&apos;koa&apos;);</span><br><span class="line">const app = new Koa();</span><br><span class="line"></span><br><span class="line">app.use(async ctx =&gt; &#123;</span><br><span class="line">  ctx.body = &apos;Hello World&apos;;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">app.listen(3000);</span><br></pre></td></tr></table></figure>
+
+<ol start="3">
+<li>启动</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nodemon app.js</span><br></pre></td></tr></table></figure>
+
+<p>访问 3000端口，可以看到输出 <code>Hello World</code>，现在修改一下代码</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">...</span><br><span class="line"></span><br><span class="line">app.use(async ctx =&gt; &#123;</span><br><span class="line">  ctx.body = &apos;Hello Nodemon&apos;;</span><br><span class="line">&#125;);</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
+
+<p>当我们Ctrl+S 保存代码时，可以看到终端命令行，输出：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[nodemon] restarting due to changes...</span><br><span class="line">[nodemon] starting `node app.js`</span><br></pre></td></tr></table></figure>
+
+<p>刷新浏览器，可以看到页面已经发生了改变，变成“Hello Nodemon”</p>
+<p>ok，有这个小工具，nodejs开发调试会变得方便一点。</p>
 
     </div>
     
@@ -256,17 +261,17 @@ API数据接口：聚合数据
 </article>
 <div class="article-nav prev-next-wrap clearfix">
     
-    <a href="/2019/09/15/node自动重启工具——nodemon/" class="pre-post btn btn-default" title='node自动重启工具——nodemon'>
+    <a href="/2019/09/16/vue学习路线/" class="pre-post btn btn-default" title='vue学习路线'>
         <i class="fa fa-angle-left fa-fw"></i><span class="hidden-lg">上一篇</span>
         <span class="hidden-xs">
-            node自动重启工具——nodemon</span>
+            vue学习路线</span>
     </a>
     
     
-    <a href="/2019/09/05/记本博客搭建过程/" class="next-post btn btn-default" title='记本博客搭建过程'>
+    <a href="/2019/09/09/分享收藏的一些站点/" class="next-post btn btn-default" title='分享收藏的一些站点'>
         <span class="hidden-lg">下一篇</span>
         <span class="hidden-xs">
-            记本博客搭建过程</span><i class="fa fa-angle-right fa-fw"></i>
+            分享收藏的一些站点</span><i class="fa fa-angle-right fa-fw"></i>
     </a>
     
 </div>
