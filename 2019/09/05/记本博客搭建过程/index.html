@@ -1,0 +1,457 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+<head><meta name="generator" content="Hexo 3.9.0">
+    <!--Setting-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta http-equiv="Cache-Control" content="no-transform">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta name="apple-mobile-web-app-capable" content="livisun&#39;s blog">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no,email=no,adress=no">
+    <meta name="browsermode" content="application">
+    <meta name="screen-orientation" content="portrait">
+    <meta name="theme-version" content="1.0.1">
+    <meta name="root" content="/">
+    <link rel="dns-prefetch" href="http://livisun.gitgub.io">
+    <!--SEO-->
+
+<meta name="keywords" content="hexo">
+
+
+<meta name="description" content="
+最近搞了一个线上文档，参考了vuejs.orgvue中文网站的风格，才知道他们用hexo搭建的，之前我用Jekyll搭的 ，要配置很多环境，感觉不如hexo好用，于是就有了这个新博客。整个博客...">
+
+
+<meta name="robots" content="all">
+<meta name="google" content="all">
+<meta name="googlebot" content="all">
+<meta name="verify" content="all">
+    <!--Title-->
+
+<title>
+    
+    记本博客搭建过程 |
+    
+    livisun&#39;s blog
+</title>
+
+<link rel="alternate" href="/atom.xml" title="livisun&#39;s blog" type="application/atom+xml">
+
+
+<link rel="icon" href="/favicon.ico">
+
+    
+
+<link rel="stylesheet" href="/css/bootstrap.min.css?rev=3.3.7">
+<link rel="stylesheet" href="/css/font-awesome.min.css?rev=4.7.0">
+<link rel="stylesheet" href="/css/style.css?rev=@@hash">
+    
+
+
+
+    
+
+<script>
+(function() {
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    } else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+</head></html>
+<!--[if lte IE 8]>
+<style>
+    html{ font-size: 1em }
+</style>
+<![endif]-->
+<!--[if lte IE 9]>
+<div style="ie">你使用的浏览器版本过低，为了你更好的阅读体验，请更新浏览器的版本或者使用其他现代浏览器，比如Chrome、Firefox、Safari等。</div>
+<![endif]-->
+<body>
+    <header class="main-header"  style="background-image:url(
+    http://snippet.shenliyang.com/img/banner.jpg)"
+     >
+    <div class="main-header-box">
+        <a class="header-avatar" href="/" title='livisun'>
+            <img src="/img/avatar.jpg" alt="logo头像" class="img-responsive center-block">
+        </a>
+        <div class="branding">
+            <!--<h2 class="text-hide">Snippet主题,从未如此简单有趣</h2>-->
+            
+            <h2>
+                读有趣的书，写简单的代码。
+            </h2>
+            
+        </div>
+    </div>
+</header>
+    <nav class="main-navigation">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="navbar-header"><span class="nav-toggle-button collapsed pull-right" data-toggle="collapse" data-target="#main-menu" id="mnav">
+                        <span class="sr-only"></span>
+                        <i class="fa fa-bars"></i>
+                    </span>
+                    <a class="navbar-brand" href="http://livisun.gitgub.io">
+                        livisun&#39;s blog</a>
+                </div>
+                <div class="collapse navbar-collapse" id="main-menu">
+                    <ul class="menu">
+                        
+                        <li role="presentation" class="text-center">
+                            <a href="/"><i class="fa "></i>
+                                首页</a>
+                        </li>
+                        
+                        <li role="presentation" class="text-center">
+                            <a href="/categories/编程/"><i class="fa "></i>
+                                编程</a>
+                        </li>
+                        
+                        <li role="presentation" class="text-center">
+                            <a href="/categories/阅读/"><i class="fa "></i>
+                                阅读</a>
+                        </li>
+                        
+                        <li role="presentation" class="text-center">
+                            <a href="/categories/随笔"><i class="fa "></i>
+                                随笔</a>
+                        </li>
+                        
+                        <li role="presentation" class="text-center">
+                            <a href="/categories/工具/"><i class="fa "></i>
+                                工具</a>
+                        </li>
+                        
+                        <li role="presentation" class="text-center">
+                            <a href="/archives/"><i class="fa "></i>
+                                时间轴</a>
+                        </li>
+                        
+                        <li role="presentation" class="text-center">
+                            <a href="/about/"><i class="fa "></i>
+                                关于我</a>
+                        </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+    <section class="content-wrap">
+        <div class="container">
+            <div class="row">
+                <main class="col-md-8 main-content m-post">
+                    <p id="process"></p>
+<article class="post">
+    <div class="post-head">
+        <h1 id="记本博客搭建过程">
+            
+            记本博客搭建过程
+            
+        </h1>
+        <div class="post-meta">
+    
+    <span class="categories-meta fa-wrap">
+        <i class="fa fa-folder-open-o"></i>
+        <a class="category-link" href="/categories/随笔/">随笔</a>
+    </span>
+    
+    
+    <span class="fa-wrap">
+        <i class="fa fa-tags"></i>
+        <span class="tags-meta">
+            
+            <a class="tag-link" href="/tags/hexo/">hexo</a>
+            
+        </span>
+    </span>
+    
+    
+    
+    <span class="fa-wrap">
+        <i class="fa fa-clock-o"></i>
+        <span class="date-meta">
+            2019/09/05</span>
+    </span>
+    
+    
+</div>
+        
+        
+    </div>
+    
+    <div class="post-body post-content">
+        <blockquote>
+<p>最近搞了一个线上文档，参考了<a href="https://cn.vuejs.org/" target="_blank" rel="noopener">vuejs.org</a>vue中文网站的风格，才知道他们用<a href="https://hexo.io/zh-cn/" target="_blank" rel="noopener">hexo</a>搭建的，之前我用<a href="https://jekyllrb.com/" target="_blank" rel="noopener">Jekyll</a>搭的 ，要配置很多环境，感觉不如hexo好用，于是就有了这个新博客。整个博客通过hexo在本地写博客并生成博客页面，然后由<code>hexo-deployer-git</code>插件帮我们把博客内容推送到git仓库，由git page 来托管这些静态文件。废话不多说，我们直接开始搭建过程。</p>
+</blockquote>
+<h2 id="1-准备工作"><a href="#1-准备工作" class="headerlink" title="1 准备工作"></a>1 准备工作</h2><hr>
+<p><em>win7用户，按顺序搞就完了，假如因为系统环境或者node版本什么的导致下列哪个安装失败了，请自行百度或者访问官网解决，我们这里认为都是直接成功的。</em></p>
+<ul>
+<li>安装node环境;<br>我记得很久之前在简书上写过一篇，写的有点啰嗦，你只要安装一下就行,版本管理啥的，直接跳过。<a href="https://www.jianshu.com/p/81102b9b3b36" target="_blank" rel="noopener">传送</a></li>
+<li>一个github账号;<br>没有赶紧去<a href="https://github.com/" target="_blank" rel="noopener">注册</a> 要是搞不定，<a href="https://blog.csdn.net/weixin_42693104/article/details/82584849" target="_blank" rel="noopener">点我</a></li>
+<li>安装hexo;<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install -g hexo-cli</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<br>
+<br> 
+
+<h2 id="2-创建git仓库"><a href="#2-创建git仓库" class="headerlink" title="2 创建git仓库"></a>2 创建git仓库</h2><hr>
+<p>打开你的git仓库，新建一个仓库，注意仓库名称一定是<font color="#FF0000"> username.github.io</font> 其中<code>username</code>是你的github用户名。如图所示 <img src="/images/img1.png" alt>    <em>这是github page的托管站点创建规则。不信？你可以不按这个规则试一试，这是<a href="https://pages.github.com/" target="_blank" rel="noopener">官方说明</a>。</em></p>
+<p>这样，未来我们博客搭建完成并托管在github page之后，就可以通过<code>username.github.io</code>来访问。当然你要是觉得这个域名有点low，不符合你高大威猛的形象。别担心，github也是充分体谅有自己个性域名的小伙伴的。<br></p>
+<h3 id="2-1-绑定自定义域名"><a href="#2-1-绑定自定义域名" class="headerlink" title="2.1 绑定自定义域名"></a><strong>2.1 绑定自定义域名</strong></h3><p>在域名控制台，例如阿里云的域名管理界面，找到域名解析设置，分别设置<code>A</code>(将域名指向一个IPV4地址)和<code>CNAME</code>(将域名指向另一个域名)类型。<br><img src="/images/img3.png" alt></p>
+<p><code>这里有几点需要额外说明一下：</code><br></p>
+<blockquote>
+<ol>
+<li>A类型解析 是指向一个ipv4地址的，也就是说需要我们github page的ip地址，我们需要先ping 一下得到这个地址。<img src="/images/img2.png" alt><br></li>
+<li>CNAME类型解析，需要我们在github项目根目录存在一个CNAME文件(无后缀)，里面填写你绑定的这个新域名(我们在后面hexo博客搭建时候来配置)。配置完成之后，我们可以看到在项目的settings中 github pages 的 自定义域名这里自动绑定了。当然你直接在这边修改我记得好像也是可以的，嘻嘻。<img src="/images/img4.png" alt><br></li>
+<li>在你绑定了新域名之后，原来的username.github.io并不是就失效了，而是会跳转到你新绑定的域名。</li>
+</ol>
+</blockquote>
+<br>
+<br> 
+
+<h2 id="3-使用hexo搭建博客"><a href="#3-使用hexo搭建博客" class="headerlink" title="3 使用hexo搭建博客"></a>3 使用hexo搭建博客</h2><hr>
+<p>在准备工作阶段，我们已经安装了hexo了(这里插个嘴，我在家里用win10 安装hexo-cli之后，发现并不能执行hexo指令，在全局安装之后，还要把它你的全局node_modules路径配置到系统环境变量中去)，接下来我们开始创建博客。</p>
+<h3 id="3-1-创建博客"><a href="#3-1-创建博客" class="headerlink" title="3.1 创建博客"></a><strong>3.1 创建博客</strong></h3><p>找个好地方，执行以下命令，hexo-cli 会在这个文件内创建hexo的脚手架环境。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo init &lt;folder&gt;</span><br></pre></td></tr></table></figure>
+
+<p>这里的<code>&lt;floder&gt;</code> 表示你想要创建的博客项目的名称，比如我就直接 <code>hex init myblog</code>。</p>
+<blockquote>
+<p>小提示，按照官方文档，在执行玩init初始化执行后，还需要运行<code>npm install</code>来安装依赖，但实际情况据我观察，好像并不需要。跟踪一下这个初始化执行：从github上克隆<a href="https://github.com/hexojs/hexo" target="_blank" rel="noopener">hexo</a>项目到本地，然后把相关git配置删除，并且完成了安装依赖的过程，直接运行下面指令，运行一个本地服务，默认地址为<code>http://localhost:4000</code>，就可以看到默认的博客页面了。</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server   //可以简写成 hexo s</span><br></pre></td></tr></table></figure>
+
+<h3 id="3-2-配置相关文件"><a href="#3-2-配置相关文件" class="headerlink" title="3.2 配置相关文件"></a><strong>3.2 配置相关文件</strong></h3><p>我们看一下文件目录，大概说一下吧</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">.</span><br><span class="line">├── _config.yml   //博客站点的配置文件，绝大部门配置都在这里完成</span><br><span class="line">├── package.json  //这个就不多说了，nodejs模块的描述文件</span><br><span class="line">├── scaffolds     //这是以后用hexo 指令来创建文件时的Front-matter模板</span><br><span class="line">├── source        //这个真不说了</span><br><span class="line">|   └── _posts    //在这里面的文件.md和.html，将来会被解析到public文件夹发布出去</span><br><span class="line">└── themes        //站点的主题，hexo会根据这个文件内容来生成和解析</span><br></pre></td></tr></table></figure>
+
+<p>这里看一下<code>_config.yml</code>文件的配置，可以看我下面的备注，也可以自行访问<a href="https://hexo.io/zh-cn/docs/configuration" target="_blank" rel="noopener">官方文档</a>：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br></pre></td><td class="code"><pre><span class="line"># Hexo Configuration</span><br><span class="line">## Docs: https://hexo.io/docs/configuration.html</span><br><span class="line">## Source: https://github.com/hexojs/hexo/</span><br><span class="line"></span><br><span class="line"># Site</span><br><span class="line">title: livisun&apos;s blog   //这里是站点的title，将来浏览器tab标签栏显示的</span><br><span class="line">subtitle:               // 网站副标题，没啥用</span><br><span class="line">description:            //网站描述 ，用于SEO，给浏览器爬虫抓取的</span><br><span class="line">keywords:               //关键字 ，同上</span><br><span class="line">author: livisun         //作者</span><br><span class="line">language: zh-CN         //网站使用的语言，</span><br><span class="line">timezone:               //网站时区，不知道干啥的，都可以不填，应该会有默认的，下面</span><br><span class="line">//没必要改的我就不写备注了</span><br><span class="line"></span><br><span class="line"># URL</span><br><span class="line">## If your site is put in a subdirectory, set url as &apos;http://yoursite.com/child&apos; and root as &apos;/child/&apos;</span><br><span class="line">url: http://livisun.gitgub.io   //未来站点的网址</span><br><span class="line">root: /                         //网址的根目录 </span><br><span class="line">permalink: :year/:month/:day/:title/</span><br><span class="line">permalink_defaults:</span><br><span class="line"></span><br><span class="line"># Directory</span><br><span class="line">source_dir: source</span><br><span class="line">public_dir: public</span><br><span class="line">tag_dir: tags</span><br><span class="line">archive_dir: archives</span><br><span class="line">category_dir: categories</span><br><span class="line">code_dir: downloads/code</span><br><span class="line">i18n_dir: :lang</span><br><span class="line">skip_render:</span><br><span class="line"></span><br><span class="line"># Writing</span><br><span class="line">new_post_name: :title.md # File name of new posts</span><br><span class="line">default_layout: post</span><br><span class="line">titlecase: false # Transform title into titlecase</span><br><span class="line">external_link: true # Open external links in new tab</span><br><span class="line">filename_case: 0</span><br><span class="line">render_drafts: false</span><br><span class="line">post_asset_folder: false</span><br><span class="line">relative_link: false</span><br><span class="line">future: true</span><br><span class="line">highlight:</span><br><span class="line">  enable: true</span><br><span class="line">  line_number: true</span><br><span class="line">  auto_detect: false</span><br><span class="line">  tab_replace:</span><br><span class="line">  </span><br><span class="line"># Home page setting</span><br><span class="line"># path: Root path for your blogs index page. (default = &apos;&apos;)</span><br><span class="line"># per_page: Posts displayed per page. (0 = disable pagination)</span><br><span class="line"># order_by: Posts order. (Order by date descending by default)</span><br><span class="line">index_generator:</span><br><span class="line">  path: &apos;&apos;</span><br><span class="line">  per_page: 10</span><br><span class="line">  order_by: -date</span><br><span class="line">  </span><br><span class="line"># Category &amp; Tag</span><br><span class="line">default_category: uncategorized</span><br><span class="line">category_map:</span><br><span class="line">tag_map:</span><br><span class="line"></span><br><span class="line"># Date / Time format</span><br><span class="line">## Hexo uses Moment.js to parse and display date</span><br><span class="line">## You can customize the date format as defined in</span><br><span class="line">## http://momentjs.com/docs/#/displaying/format/</span><br><span class="line">date_format: YYYY-MM-DD</span><br><span class="line">time_format: HH:mm:ss</span><br><span class="line"></span><br><span class="line"># Pagination</span><br><span class="line">## Set per_page to 0 to disable pagination</span><br><span class="line">per_page: 10</span><br><span class="line">pagination_dir: page</span><br><span class="line"></span><br><span class="line"># Extensions</span><br><span class="line">## Plugins: https://hexo.io/plugins/</span><br><span class="line">## Themes: https://hexo.io/themes/</span><br><span class="line">theme: snippet  //这里表示hexo选择的主题，在themes文件下，有一个默认主题，我们这边用了更换了，后面我们会说明一下主题的更换</span><br><span class="line"></span><br><span class="line"># Deployment</span><br><span class="line">## Docs: https://hexo.io/docs/deployment.html</span><br><span class="line">//这边需要说明一下 ，这是hexo的部署配置，</span><br><span class="line">deploy:</span><br><span class="line">  type: git  //表示通过git工具来部署</span><br><span class="line">  repository: https://github.com/livisun/livisun.github.io.git  //部署到这个仓</span><br><span class="line">  //库，也就是我们开始创建的那个仓库</span><br><span class="line">  branch: master  //默认的master分支</span><br></pre></td></tr></table></figure>
+
+<br>
+<br>
+
+<h2 id="4-更换主题"><a href="#4-更换主题" class="headerlink" title="4 更换主题"></a>4 更换主题</h2><hr>
+<p>你会发现你刚刚运行的博客跟本博客比起来是不是有点丑，没问题，安排~。<br><br>官方提供了一个很方便的主题更换机制，我们可以看到在上面的<code>_config.yml</code>配置中有主题配置项，实际操作只需要下载（大佬可以自己制作）一个主题文件，放在themes文件下，然后到配置文件中，替换一下就可以了。官方怕我们找不到这样的主题，做又做不出来，很贴心的搞了一个主题分享站点，我们可以去淘一个喜欢的主题，甚至你要是看上了好几个，你还可以做到主题的切换，这里是<a href="https://hexo.io/themes/" target="_blank" rel="noopener">传送门</a>。哦对了，当前主题在本博客页脚处，可以自行获取。算了，来，<a href="https://github.com/shenliyang/hexo-theme-snippet" target="_blank" rel="noopener">坐车</a>。</p>
+<blockquote>
+<p>我为什么会选这个主题呢，因为这个主题简约但不简单，个人不是很能接受那种花哨的页面，主要内容要绕一大圈去找，去猜, <del>玩捉迷藏呢</del>。这个就很好，功能强大，主次分明。</p>
+</blockquote>
+<p> 按照snippent主题官方仓库的介绍，有以下特点:</p>
+<ul>
+<li>原生JavaScript实现，去jQuery化</li>
+<li>样式支持CSS预处理器Less，方便主题自定义</li>
+<li>文章过期提醒功能</li>
+<li>文章阅读进度条</li>
+<li>网站公告功能</li>
+<li>首页图片懒加载</li>
+<li>首页文章缩略图自动检索文章内图片，支持自动随机图片</li>
+<li>主题支持响应式</li>
+<li>支持3D云标签</li>
+<li>支持文章推送和文章打赏</li>
+<li>站内本地搜索和谷歌搜索</li>
+<li>支持多个第三方评论系统</li>
+<li>支持网站统计和不蒜子访客统计</li>
+<li>移动端的简洁设计</li>
+<li>支持代码高亮并支持自定义高亮样式</li>
+<li>支持Shell脚本通过Travis CI自动化部署Hexo博客</li>
+<li>支持Hexo自动化部署结果发送邮件和实时推送到钉钉</li>
+</ul>
+<p>嗯，看上去很6的样子，有些功能对我来说不来必要，但是可以看出作者还是很用心的，并且这个主题库一直在保持更新，最近一次提交在21天之前，感兴趣的可以深入了解一下，我们这里只简单介绍一下本博客的配置:</p>
+<h3 id="4-1-snippet主题下载"><a href="#4-1-snippet主题下载" class="headerlink" title="4.1 snippet主题下载"></a><strong>4.1 snippet主题下载</strong></h3><p>snippet获取可以通过两种方式：</p>
+<ol>
+<li>下载<a href="https://github.com/shenliyang/hexo-theme-snippet" target="_blank" rel="noopener">snippet主题</a>的zip文件，解压后放在<code>themes</code>目录下，和默认landscape为同级目录</li>
+<li>在hexo博客根目录，例如我的在<code>myblog</code>执行：<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git clone git://github.com/shenliyang/hexo-theme-snippet.git themes/hexo-theme-snippet</span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<h3 id="4-2-安装主题插件"><a href="#4-2-安装主题插件" class="headerlink" title="4.2 安装主题插件"></a><strong>4.2 安装主题插件</strong></h3><p>因为 hexo-theme-snippet 使用了 ejs 模版引擎 、 Less CSS预编译语言以及在官方插件的基础上 进行功能的开发，以下为必装插件：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm i hexo-renderer-ejs hexo-renderer-less hexo-deployer-git -S</span><br></pre></td></tr></table></figure>
+
+<h3 id="4-3主题配置"><a href="#4-3主题配置" class="headerlink" title="4.3主题配置"></a><strong>4.3主题配置</strong></h3><blockquote>
+<p>下面就是主题的配置，关系到未来hexo如何解析我们写的文章，并配置主题所提供的其他功能，废话太多了，我们开始，当然你也可以在阅读主题的官方文档，因为也许之后该主题会出更多新功能或其他重大更新，当然你要是觉得这样挺好，跟我来就行。</p>
+</blockquote>
+<p>snippet主题同样有一个<code>——config.yml</code>文件，这就是主题的配置文件了，同样我们贴一下配置，并注释。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br><span class="line">199</span><br><span class="line">200</span><br><span class="line">201</span><br><span class="line">202</span><br><span class="line">203</span><br><span class="line">204</span><br><span class="line">205</span><br><span class="line">206</span><br><span class="line">207</span><br><span class="line">208</span><br><span class="line">209</span><br><span class="line">210</span><br><span class="line">211</span><br><span class="line">212</span><br><span class="line">213</span><br><span class="line">214</span><br><span class="line">215</span><br><span class="line">216</span><br><span class="line">217</span><br><span class="line">218</span><br><span class="line">219</span><br><span class="line">220</span><br><span class="line">221</span><br><span class="line">222</span><br><span class="line">223</span><br><span class="line">224</span><br><span class="line">225</span><br><span class="line">226</span><br><span class="line">227</span><br><span class="line">228</span><br><span class="line">229</span><br><span class="line">230</span><br><span class="line">231</span><br><span class="line">232</span><br><span class="line">233</span><br><span class="line">234</span><br><span class="line">235</span><br><span class="line">236</span><br><span class="line">237</span><br><span class="line">238</span><br><span class="line">239</span><br><span class="line">240</span><br><span class="line">241</span><br><span class="line">242</span><br><span class="line">243</span><br><span class="line">244</span><br><span class="line">245</span><br><span class="line">246</span><br><span class="line">247</span><br><span class="line">248</span><br><span class="line">249</span><br><span class="line">250</span><br><span class="line">251</span><br><span class="line">252</span><br><span class="line">253</span><br><span class="line">254</span><br><span class="line">255</span><br><span class="line">256</span><br><span class="line">257</span><br><span class="line">258</span><br><span class="line">259</span><br><span class="line">260</span><br><span class="line">261</span><br><span class="line">262</span><br><span class="line">263</span><br><span class="line">264</span><br><span class="line">265</span><br></pre></td><td class="code"><pre><span class="line"># ---------------------------------------------------------------</span><br><span class="line">#   Site Information And Theme Configuration Settings</span><br><span class="line">#   language: zh-CN</span><br><span class="line"># ---------------------------------------------------------------</span><br><span class="line"></span><br><span class="line">## menu </span><br><span class="line">//  导航菜单显示&#123;[@page:名字,@url:地址,@icon:图标]&#125;</span><br><span class="line">menu:</span><br><span class="line">- page: home</span><br><span class="line">  url: /</span><br><span class="line">  icon:</span><br><span class="line">- page: 编程</span><br><span class="line">  url: /categories/编程/</span><br><span class="line">  icon:</span><br><span class="line">- page: 阅读</span><br><span class="line">  url: /categories/阅读/</span><br><span class="line">  icon:</span><br><span class="line">- page: 随笔</span><br><span class="line">  url: /archives/随笔</span><br><span class="line">  icon:</span><br><span class="line">- page: 工具</span><br><span class="line">  url: /categories/工具/</span><br><span class="line">  icon:</span><br><span class="line">- page: 时间轴</span><br><span class="line">  url: /archives/</span><br><span class="line">  icon:</span><br><span class="line">- page: 关于我</span><br><span class="line">  url: /about/</span><br><span class="line">  icon:</span><br><span class="line"></span><br><span class="line">## favicon -- 网站图标位置&#123;@favicon&#125;</span><br><span class="line">favicon: /favicon.ico</span><br><span class="line"></span><br><span class="line">## Feed</span><br><span class="line">rss: /atom.xml</span><br><span class="line"></span><br><span class="line"># ## Carousel</span><br><span class="line"># carousel:</span><br><span class="line">#   img: &apos;./img/head-img.jpg&apos;</span><br><span class="line">#   url: &apos;https://promotion.aliyun.com/ntms/act/qwbk.html?userCode=xs0pypd2&apos;</span><br><span class="line"></span><br><span class="line"># 各个小工具的设置</span><br><span class="line">//这里是右侧6个左边小工具</span><br><span class="line">## widgets</span><br><span class="line">widgets:</span><br><span class="line">  - search</span><br><span class="line">  - notification</span><br><span class="line">  - social</span><br><span class="line">  - category</span><br><span class="line">  - archive</span><br><span class="line">  - tagcloud</span><br><span class="line">  - friends</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">## 搜索</span><br><span class="line">jsonContent:          //配置那些目录支持站点搜索</span><br><span class="line">  searchLocal: true   // 是否启用本地搜索</span><br><span class="line">  searchGoogle: false //是否启用谷歌搜索</span><br><span class="line">  posts:</span><br><span class="line">    title: true</span><br><span class="line">    text: true</span><br><span class="line">    content: true</span><br><span class="line">    categories: true</span><br><span class="line">    tags: true</span><br><span class="line"></span><br><span class="line">## 网站公告设置 支持 html 和 纯文本</span><br><span class="line">notification: |-</span><br><span class="line">            &lt;p&gt;</span><br><span class="line">              &lt;a href=&quot;https://ustbhuangyi.github.io/vue-analysis&quot; target=&quot;_blank&quot; &gt;Vue源码学习&lt;/a&gt; &lt;br/&gt;</span><br><span class="line">              &lt;a href=&quot;https://blog.just4fun.site/Scratch3_api_analysis.html&quot; target=&quot;_blank&quot;&gt;scratch3 源码分析&lt;/a&gt; &lt;br/&gt;</span><br><span class="line">            &lt;/p&gt;</span><br><span class="line"></span><br><span class="line">## 社交设置 &#123;@name:社交工具名字，@icon:社交工具图标，@href:设置工具链接&#125; [参考图标]</span><br><span class="line">//(http://fontawesome.io/icons/)</span><br><span class="line">social:</span><br><span class="line"> - name: Github</span><br><span class="line">   icon: git</span><br><span class="line">   href: //github.com/livisun</span><br><span class="line"> - name: 邮箱</span><br><span class="line">   icon: envelope-o</span><br><span class="line">   href: mailto:1105432766@qq.com</span><br><span class="line"> - name: 联系QQ</span><br><span class="line">   icon: qq</span><br><span class="line">   href: tencent://message/?uin=1105432766</span><br><span class="line"> - name: 微信</span><br><span class="line">   icon: weixin</span><br><span class="line">   href: /</span><br><span class="line"> - name: QQ群</span><br><span class="line">   icon: users</span><br><span class="line">   href: /</span><br><span class="line"> - name: RSS</span><br><span class="line">   icon: feed</span><br><span class="line">   href: /atom.xml</span><br><span class="line"></span><br><span class="line">## 文章分类设置 </span><br><span class="line">cate_config:</span><br><span class="line">   show_count: true      //是否显示数字</span><br><span class="line">   show_current: true    //是否高亮当前分类</span><br><span class="line"></span><br><span class="line">## 文章归档设置</span><br><span class="line">arch_config:</span><br><span class="line">   type: &apos;monthly&apos;</span><br><span class="line">   format: &apos;YYYY年MM月&apos;</span><br><span class="line">   show_count: true</span><br><span class="line">   order: -1</span><br><span class="line"></span><br><span class="line">## 标签云设置</span><br><span class="line">tagcloud:</span><br><span class="line">  tag3d: false            // 是否启用3D标签云</span><br><span class="line">  textColour: &apos;#444&apos;      //字体颜色</span><br><span class="line">  outlineMethod: &apos;block&apos;  // 选中模式(outline|classic|block|colour|size|none)</span><br><span class="line">  outlineColour: &apos;#FFDAB9&apos;// 选中模式的颜色</span><br><span class="line">  interval: 30            //动画帧之间的时间间隔，值越大，转动幅度越大</span><br><span class="line">  freezeActive: true      //选中的标签是否继续滚动</span><br><span class="line">  frontSelect: true       //不选标签云后部的标签</span><br><span class="line">  reverse: true           //是否反向触发</span><br><span class="line">  wheelZoom: false        //是否启用鼠标滚轮</span><br><span class="line"></span><br><span class="line">## 友链设置</span><br><span class="line">links:</span><br><span class="line">  - Hexo官网: https://hexo.io/zh-cn/</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"># 主题自定义个性化配置</span><br><span class="line"></span><br><span class="line">## 网站宣传语</span><br><span class="line">branding: 读有趣的书，写简单的代码。</span><br><span class="line"></span><br><span class="line">## 设置banner背景图片 //支持动态背景</span><br><span class="line">banner:</span><br><span class="line">    img: http://snippet.shenliyang.com/img/banner.jpg</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">## 首页列表底部面板</span><br><span class="line">homePanel: true</span><br><span class="line"></span><br><span class="line">## 缩略图自定义随机图片</span><br><span class="line">defaultImgs:</span><br><span class="line">  -</span><br><span class="line"></span><br><span class="line">## 截取文章首页描述字数</span><br><span class="line">//自定截图内容摘要，支持自定义摘要，</span><br><span class="line">//自定义摘要&#123;@&lt;!--more--&gt;:截取more之前的内容为摘要&#125;</span><br><span class="line">excerptLength: 120</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">## 是否开启文章目录</span><br><span class="line">toc: true</span><br><span class="line"></span><br><span class="line">## 代码高亮配置</span><br><span class="line">highlightTheme:</span><br><span class="line"></span><br><span class="line">## bootstrap配置</span><br><span class="line">bootstrap:</span><br><span class="line"></span><br><span class="line">## ICON配置</span><br><span class="line">fontAwesome:</span><br><span class="line"></span><br><span class="line">## 文章过期提醒功能</span><br><span class="line">warning:</span><br><span class="line">  days: 300</span><br><span class="line">  text: &apos;本文于%d天之前发表，文中内容可能已经过时。&apos;</span><br><span class="line"></span><br><span class="line">## 文章内声明</span><br><span class="line">declaration:</span><br><span class="line">  enable: true</span><br><span class="line">  title: &apos;转载声明&apos;</span><br><span class="line">  tip: |-</span><br><span class="line">      商业转载请联系作者获得授权,非商业转载请注明出处 © &lt;a href=&quot;&quot; target=&quot;_blank&quot;&gt;livisun&lt;/a&gt;</span><br><span class="line"></span><br><span class="line">## 文章打赏</span><br><span class="line">reward:</span><br><span class="line">  alipay: &apos;/img/zfb.png&apos;</span><br><span class="line">  wepay: &apos; /img/wx.png&apos;</span><br><span class="line">  tip: 假如你刚好有兴趣请我喝杯奶茶</span><br><span class="line"></span><br><span class="line">## 主题评论</span><br><span class="line"></span><br><span class="line">//这里我们用的Valine评论，支持其他评论，自行探索</span><br><span class="line">## Valine评论</span><br><span class="line"></span><br><span class="line">valine:</span><br><span class="line">   enable: true</span><br><span class="line">   appId: PFF3iz6l46WOQXhWBVPX22um-gzGzoHsz  //自己去注册</span><br><span class="line">   appKey: aQNed97fCoI0PTI26eDHdtBe</span><br><span class="line">   placeholder: 说点什么吧</span><br><span class="line">   notify: false // 邮件通知</span><br><span class="line">   verify: true  // 验证码</span><br><span class="line">   avatar: mm    // avatar头像</span><br><span class="line">   meta: nick,mail   // 输入框内容，可选值nick,mail,link</span><br><span class="line">   pageSize: 10</span><br><span class="line"></span><br><span class="line">### 畅言评论(需要ICP备案)</span><br><span class="line">changyan:</span><br><span class="line">  enable: false</span><br><span class="line">  appid:</span><br><span class="line">  conf:</span><br><span class="line"></span><br><span class="line">### 来必力</span><br><span class="line">livere:</span><br><span class="line">  enable: false</span><br><span class="line">  livere_uid: MTAyMC8zMzA1MS85NjEz</span><br><span class="line"></span><br><span class="line">## Gitalk评论</span><br><span class="line">gitalk:</span><br><span class="line">   enable: false</span><br><span class="line">   clientID:</span><br><span class="line">   clientSecret:</span><br><span class="line">   repo:</span><br><span class="line">   owner:</span><br><span class="line">   admin:</span><br><span class="line">   perPage:</span><br><span class="line">   distractionFreeMode: true</span><br><span class="line"></span><br><span class="line">### Disqus评论</span><br><span class="line">disqus:</span><br><span class="line">  enable: false</span><br><span class="line">  shortname: snippet</span><br><span class="line">  count: false</span><br><span class="line"></span><br><span class="line">### gitment评论(长期不更新，不建议使用)</span><br><span class="line">gitment:</span><br><span class="line">  enable: false</span><br><span class="line">  owner:</span><br><span class="line">  repo:</span><br><span class="line">  client_id:</span><br><span class="line">  client_secret:</span><br><span class="line">  perPage: 10</span><br><span class="line"></span><br><span class="line">### 友言评论(服务不稳定)</span><br><span class="line">uyan:</span><br><span class="line">  enable: false</span><br><span class="line">  uyan_id: 1966422</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">## 网站访客统计</span><br><span class="line">//本博客未开启访客统计</span><br><span class="line">visit_counter:</span><br><span class="line">   site: false</span><br><span class="line">   page: false</span><br><span class="line"></span><br><span class="line">## 网站访问统计分析</span><br><span class="line"></span><br><span class="line">### 网盟CNZZ统计</span><br><span class="line">cnzz_analytics:</span><br><span class="line"></span><br><span class="line">### 百度统计</span><br><span class="line">baidu_analytics:</span><br><span class="line"></span><br><span class="line">### 谷歌统计</span><br><span class="line">google_analytics:</span><br><span class="line"></span><br><span class="line">### 腾讯分析</span><br><span class="line">tencent_analytics:</span><br><span class="line"></span><br><span class="line">### 百度站点认证</span><br><span class="line">baidu_site_verification:</span><br><span class="line"></span><br><span class="line">### 百度自动推送</span><br><span class="line">baidu_push: true</span><br><span class="line"></span><br><span class="line">#网站主题配置</span><br><span class="line">since: 2019   //建站时间</span><br><span class="line">robot: &apos;all&apos; // 控制搜索引擎的抓取和索引编制行为，默认为all</span><br><span class="line">version: 1.2.1  //主题版本</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>另外需要提醒的一点是，如果要使用站点搜索，必须安装插件<code>hexo-generator-json-content</code> 来创建本地搜索需要的json文件</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm i hexo-generator-json-content@2.2.0 -S</span><br></pre></td></tr></table></figure>
+
+<br>
+ok主题配置基本就到这，当然页面的模板你可以自定义，修改`layout`文件夹内的模板，这里就不再赘述。
+<br> 
+
+<h2 id="5-将博客部署到github-page"><a href="#5-将博客部署到github-page" class="headerlink" title="5 将博客部署到github page"></a>5 将博客部署到github page</h2><hr>
+<blockquote>
+<p>我们回顾一下之前的配置，与部署相关的有两个地方:<br></p>
+</blockquote>
+<ol>
+<li>在绑定自定义域名时候，我们提到了<code>CNAME</code>文件，对了，在部署之前需要，在hexo的source文件下创建一个无后缀名的CNAME文件，并在里面写入你的绑定域名<img src="/images/img5.png" alt></li>
+<li>在hexo的<code>_config.yml</code>文件中，配置了我们将来hexo部署的仓库<img src="/images/img6.png" alt></li>
+</ol>
+<p>接下来还需要安装一个部署插件，执行以下命令：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
+
+<p>ok,下载我们执行部署命令：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo g -d</span><br></pre></td></tr></table></figure>
+
+<p>咔咔一顿运行，之后，我们得到返回：<code>Deploy done：git</code>,表示部署成功，快去看看吧。</p>
+<blockquote>
+<p>hexo 常见命令：</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">hexo new &quot;postName&quot; #新建文章</span><br><span class="line">hexo new page &quot;pageName&quot; #新建页面</span><br><span class="line">hexo generate #生成静态页面至public目录</span><br><span class="line">hexo server #开启预览访问端口（默认端口4000，&apos;ctrl + c&apos;关闭server）</span><br><span class="line">hexo deploy #部署到GitHub</span><br><span class="line">hexo help  # 查看帮助</span><br><span class="line">hexo version  #查看Hexo的版本</span><br></pre></td></tr></table></figure>
+
+<p>缩写命令</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">hexo n == hexo new</span><br><span class="line">hexo g == hexo generate</span><br><span class="line">hexo s == hexo server</span><br><span class="line">hexo d == hexo deploy</span><br></pre></td></tr></table></figure>
+
+<p>当然，也可使用组合命令，就像上面的部署操作一样。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo s -g #生成并本地预览</span><br><span class="line">hexo d -g #生成并上传</span><br></pre></td></tr></table></figure>
+
+<p>到这为止，整个博客就搭完了，竟然写了这么久，后面如何写博客，自行参考，官网，或者在下面留言吧，先溜了。</p>
+
+    </div>
+    
+    <div class="reward" ontouchstart>
+    <div class="reward-wrap">赏
+        <div class="reward-box">
+            
+            <span class="reward-type">
+                <img class="alipay" src="/img/zfb.png"><b>支付宝打赏</b>
+            </span>
+            
+            
+            <span class="reward-type">
+                <img class="wechat" src=" /img/wx.png"><b>微信打赏</b>
+            </span>
+            
+        </div>
+    </div>
+    <p class="reward-tip">
+        假如你刚好有兴趣请我喝杯奶茶
+    </p>
+</div>
+    
+    <div class="post-footer">
+        <div>
+            
+            转载声明：
+            商业转载请联系作者获得授权,非商业转载请注明出处 © <a href="" target="_blank">livisun</a>
+            
+            
+        </div>
+        <div>
+            
+        </div>
+    </div>
+</article>
+<div class="article-nav prev-next-wrap clearfix">
+    
+    <a href="/2019/09/09/分享收藏的一些站点/" class="pre-post btn btn-default" title='分享收藏的一些站点'>
+        <i class="fa fa-angle-left fa-fw"></i><span class="hidden-lg">上一篇</span>
+        <span class="hidden-xs">
+            分享收藏的一些站点</span>
+    </a>
+    
+    
+    <a href="/2019/09/05/快速删除node-modules文件夹/" class="next-post btn btn-default" title='快速删除node_modules文件夹'>
+        <span class="hidden-lg">下一篇</span>
+        <span class="hidden-xs">
+            快速删除node_modules文件夹</span><i class="fa fa-angle-right fa-fw"></i>
+    </a>
+    
+</div>
+
+<div id="comments">
+    
+
+<div id="vcomments" class="valine"></div>
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="/assets/valine.min.js"></script>
+<script>
+new Valine({
+    av: AV,
+    el: '#vcomments',
+    appId: 'PFF3iz6l46WOQXhWBVPX22um-gzGzoHsz',
+    appKey: 'aQNed97fCoI0PTI26eDHdtBe',
+    placeholder: '说点什么吧',
+    notify: false,
+    verify: true,
+    avatar: 'mm',
+    meta: 'nick,mail'.split(','),
+    pageSize: '10',
+    path: window.location.pathname,
+    lang: 'zh-CN'.toLowerCase()
+})
+</script>
+
+
+</div>
+
+                </main>
+                
+                    <aside id="article-toc" role="navigation" class="col-md-4">
+    <div class="widget">
+        <h3 class="title">
+            文章目录
+        </h3>
+        
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-准备工作"><span class="toc-text">1 准备工作</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-创建git仓库"><span class="toc-text">2 创建git仓库</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-绑定自定义域名"><span class="toc-text">2.1 绑定自定义域名</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-使用hexo搭建博客"><span class="toc-text">3 使用hexo搭建博客</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#3-1-创建博客"><span class="toc-text">3.1 创建博客</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-2-配置相关文件"><span class="toc-text">3.2 配置相关文件</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-更换主题"><span class="toc-text">4 更换主题</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#4-1-snippet主题下载"><span class="toc-text">4.1 snippet主题下载</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-2-安装主题插件"><span class="toc-text">4.2 安装主题插件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-3主题配置"><span class="toc-text">4.3主题配置</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-将博客部署到github-page"><span class="toc-text">5 将博客部署到github page</span></a></li></ol>
+        
+    </div>
+</aside>
+                
+            </div>
+        </div>
+    </section>
+    <footer class="main-footer">
+    <div class="container">
+        <div class="row">
+        </div>
+    </div>
+</footer>
+<a id="back-to-top" class="icon-btn hide">
+    <i class="fa fa-chevron-up"></i>
+</a>
+    <div class="copyright">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="busuanzi">
+    
+</div>
+            </div>
+            <div class="col-sm-12">
+                <span>Copyright &copy;
+                    2019
+                </span> |
+                <span>
+                    Powered by <a href="//hexo.io" class="copyright-links" target="_blank" rel="nofollow">Hexo</a>
+                </span> |
+                <span>
+                    Theme by <a href="//github.com/shenliyang/hexo-theme-snippet.git" class="copyright-links" target="_blank" rel="nofollow">Snippet</a>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<script src="/js/app.js?rev=@@hash"></script>
+</body>
+</html>
