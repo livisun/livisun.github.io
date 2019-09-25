@@ -19,10 +19,15 @@
     <link rel="dns-prefetch" href="http://livisun.gitgub.io">
     <!--SEO-->
 
-<meta name="keywords" content>
+<meta name="keywords" content="vs code">
 
 
-<meta name="description" content>
+<meta name="description" content="
+本文只描述在VC Code中创建自己的代码片段，其他编辑器，请自行查阅。
+
+
+打开VS Code，按F1 打开命令窗口，输入关键字snippet,找到首选项：配置用户代码片段，回车进入；
+选择...">
 
 
 <meta name="robots" content="all">
@@ -33,7 +38,7 @@
 
 <title>
     
-    分类: 工具 |
+    创建VS Code 代码片段 |
     
     livisun&#39;s blog
 </title>
@@ -153,194 +158,146 @@
     <section class="content-wrap">
         <div class="container">
             <div class="row">
-                <main class="col-md-8 main-content ">
-                    <ol class="breadcrumb">
+                <main class="col-md-8 main-content m-post">
+                    <p id="process"></p>
+<article class="post">
+    <div class="post-head">
+        <h1 id="创建VS Code 代码片段">
+            
+            创建VS Code 代码片段
+            
+        </h1>
+        <div class="post-meta">
     
-    <li>
-        工具
-    </li>
+    <span class="categories-meta fa-wrap">
+        <i class="fa fa-folder-open-o"></i>
+        <a class="category-link" href="/categories/编程/">编程</a>
+    </span>
     
+    
+    <span class="fa-wrap">
+        <i class="fa fa-tags"></i>
+        <span class="tags-meta">
+            
+            <a class="tag-link" href="/tags/vs-code/">vs code</a>
+            
+        </span>
+    </span>
+    
+    
+    
+    <span class="fa-wrap">
+        <i class="fa fa-clock-o"></i>
+        <span class="date-meta">
+            2019/09/25</span>
+    </span>
+    
+    
+</div>
+        
+        
+    </div>
+    
+    <div class="post-body post-content">
+        <blockquote>
+<p>本文只描述在VC Code中创建自己的代码片段，其他编辑器，请自行查阅。</p>
+</blockquote>
+<ol>
+<li>打开VS Code，按F1 打开命令窗口，输入关键字<code>snippet</code>,找到<code>首选项：配置用户代码片段</code>，回车进入；</li>
+<li>选择新建全局代码片段文件，例如：<em>my-snippents</em>，默认会在<code>C:\Users\Administrator\AppData\Roaming\Code\User\snippets</code>文件下，创建<em>my-snippents.code-snippents</em>文件；(注：我们现在创建的是全局的，当然你也可以创建对应语言模式的代码片段，没错就是你刚刚看到的其它选项，点开直接配置就可以，会生成例如vue.json这样的文件，同样也会被保存在这个文件夹中)</li>
+<li>在<em>my-snippents</em>文件中，添加你想要配置的代码片段，举个例子，我想要在创建文件时，添加文件相关信息：<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">	&quot;Print to console&quot;: &#123;</span><br><span class="line">		&quot;prefix&quot;: &quot;author&quot;,</span><br><span class="line">		&quot;body&quot;: [</span><br><span class="line">			&quot; /**&quot;</span><br><span class="line">			&quot;   *  @author :livisun  (博客地址：https://www.livisun.top)&quot;</span><br><span class="line">			&quot;   *  @date :$CURRENT_YEAR年$CURRENT_MONTH月$CURRENT_DATE日 $CURRENT_HOUR:$CURRENT_MINUTE:$CURRENT_SECOND $CURRENT_DAY_NAME&quot;</span><br><span class="line">			&quot;   *  @Description :$1&quot;</span><br><span class="line">			&quot;   */&quot;</span><br><span class="line">		],</span><br><span class="line">		&quot;description&quot;: &quot;创建信息&quot;</span><br><span class="line">	&#125;,</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+</li>
 </ol>
-
-<article class="post">
+<p>这样 ，就可以在创建文件时，以<em>author</em> +回车/Tab 快速输出代码片段。<br><img src="/images/wllrfyMpM5.gif" alt></p>
+<blockquote>
+<p>对了，简单介绍一下 snippet的语法规则</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">prefix      :代码片段名字，即输入此名字就可以调用代码片段。</span><br><span class="line">body        :这个是代码段的主体.需要编写的代码放在这里,　　　　　 </span><br><span class="line">$1          :生成代码后光标的初始位置.</span><br><span class="line">$2          :生成代码后光标的第二个位置,按tab键可进行快速切换,还可以有$3,$4,$5.....</span><br><span class="line">$&#123;1,字符&#125;    :生成代码后光标的初始位置(其中1表示光标开始的序号，字符表示生成代码后光标会直接选中字符。)</span><br><span class="line">description :代码段描述,输入名字后编辑器显示的提示信息。</span><br></pre></td></tr></table></figure>
+    </div>
     
-    <div class="post-content">
-        <div class="post-head home-post-head">
-            <h1 class="post-title">
-                <a href="/2019/09/15/node自动重启工具——nodemon/">
-                    node自动重启工具——nodemon</a>
-            </h1>
-            <div class="post-meta"> &bull;
-                <time class="post-date" datetime="" title="">
-                    2019年09月15日
-                </time>
-            </div>
+    <div class="reward" ontouchstart>
+    <div class="reward-wrap">赏
+        <div class="reward-box">
+            
+            <span class="reward-type">
+                <img class="alipay" src="/img/zfb.png"><b>支付宝打赏</b>
+            </span>
+            
+            
+            <span class="reward-type">
+                <img class="wechat" src=" /img/wx.png"><b>微信打赏</b>
+            </span>
+            
         </div>
-        <p class="brief">
+    </div>
+    <p class="reward-tip">
+        假如你刚好有兴趣请我喝杯奶茶
+    </p>
+</div>
+    
+    <div class="post-footer">
+        <div>
+            
+            转载声明：
+            商业转载请联系作者获得授权,非商业转载请注明出处 © <a href="" target="_blank">livisun</a>
             
             
-现在nodejs作为轻量级的后台，越来越受欢迎，尤其在前端写demo的时候，直接koa框架一来，写几个api就能测试demo了。然而因为是demo，需要频繁修改接口，增加功能，修改代码之后，需要手动close，然后在start，以前...
+        </div>
+        <div>
             
-        </p>
+        </div>
     </div>
 </article>
-
-<article class="post">
+<div class="article-nav prev-next-wrap clearfix">
     
-    <div class="post-content">
-        <div class="post-head home-post-head">
-            <h1 class="post-title">
-                <a href="/2019/09/09/分享收藏的一些站点/">
-                    分享收藏的一些站点</a>
-            </h1>
-            <div class="post-meta"> &bull;
-                <time class="post-date" datetime="" title="">
-                    2019年09月09日
-                </time>
-            </div>
-        </div>
-        <p class="brief">
-            
-            
-图片压缩工具：tinypng
-图标下载/制作： easyicon
-表格生成器：tableconvert.com
-API数据接口：聚合数据
-在线作图：ProcessOn
-前端demo托管:codePen
-JSON在线编辑:JSON E...
-            
-        </p>
-    </div>
-</article>
+    
+    <a href="/2019/09/16/vue学习路线/" class="next-post btn btn-default" title='vue学习路线'>
+        <span class="hidden-lg">下一篇</span>
+        <span class="hidden-xs">
+            vue学习路线</span><i class="fa fa-angle-right fa-fw"></i>
+    </a>
+    
+</div>
 
+<div id="comments">
+    
+
+<div id="vcomments" class="valine"></div>
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="/assets/valine.min.js"></script>
+<script>
+new Valine({
+    av: AV,
+    el: '#vcomments',
+    appId: 'PFF3iz6l46WOQXhWBVPX22um-gzGzoHsz',
+    appKey: 'aQNed97fCoI0PTI26eDHdtBe',
+    placeholder: '说点什么吧',
+    notify: false,
+    verify: true,
+    avatar: 'mm',
+    meta: 'nick,mail'.split(','),
+    pageSize: '10',
+    path: window.location.pathname,
+    lang: 'zh-CN'.toLowerCase()
+})
+</script>
+
+
+</div>
 
                 </main>
                 
-                    
-<aside class="col-md-4 sidebar">
-    
-    
-<div class="widget">
-    <h3 class="title">
-        搜索
-    </h3>
-    <div id="search-form">
-        <div id="result-mask" class="hide"></div>
-        <div class="search-area">
-            
-            <input id="search-key" type="search" autocomplete="off" placeholder="搜点什么呢？">
-            <button type="button" class="search-form-submit" id="search-local">
-                站内搜索</button>
-            
-            
-        </div>
-        <div id="result-wrap" class="hide">
-            <div id="search-result"></div>
-        </div>
-        <div class="hide">
-            <template id="search-tpl">
-                <div class="item">
-                    <a href="/{path}" title="{title}">
-                        <div class="title">{title}</div>
-                        <div class="content">{content}</div>
-                    </a>
-                </div>
-            </template>
-        </div>
-    </div>
-</div>
-
-    
-    
-<div class="widget">
-    <h3 class="title">
-        我最近在折腾
-    </h3>
-    <div class="notification">
-        <p>
-  <a href="https://ustbhuangyi.github.io/vue-analysis" target="_blank" >Vue源码学习</a> <br/>
-  <a href="https://blog.just4fun.site/Scratch3_api_analysis.html" target="_blank">scratch3 源码分析</a> <br/>
-  <a href="https://github.com/vuegg/vuegg" target="_blank">vuegg-vue可视化编辑器</a> <br/>
-</p>
-    </div>
-</div>
-
-    
-    
-<div class="widget">
-    <h3 class="title">
-        社交
-    </h3>
-    <div class="content social">
+                    <aside id="article-toc" role="navigation" class="col-md-4">
+    <div class="widget">
+        <h3 class="title">
+            文章目录
+        </h3>
         
-        <a href="//github.com/livisun" rel="external nofollow" title="Github：https://github.com/livisun" target="_blank">
-            <i class="git fa fa-git"></i>
-        </a>
-        
-        <a href="mailto:livisun@qq.com" rel="external nofollow" title="邮箱：livisun@qq.com" target="_blank">
-            <i class="envelope-o fa fa-envelope-o"></i>
-        </a>
-        
-        <a href="tencent://message/?uin=1105432766" rel="external nofollow" title="联系QQ：1105432766" target="_blank">
-            <i class="qq fa fa-qq"></i>
-        </a>
-        
-        <a href="/atom.xml" rel="external nofollow" title="RSS" target="_blank">
-            <i class="feed fa fa-feed"></i>
-        </a>
+        <p>暂无目录</p>
         
     </div>
-</div>
-
-    
-    
-<div class="widget">
-    <h3 class="title">
-        分类
-    </h3>
-    <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/工具/"><i class="fa" aria-hidden="true">工具</i></a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/编程/"><i class="fa" aria-hidden="true">编程</i></a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/随笔/"><i class="fa" aria-hidden="true">随笔</i></a><span class="category-list-count">1</span></li></ul>
-</div>
-
-    
-    
-<div class="widget">
-    <h3 class="title">
-        归档
-    </h3>
-    <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/09/"><i class="fa" aria-hidden="true">2019年09月</i></a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/08/"><i class="fa" aria-hidden="true">2019年08月</i></a><span class="archive-list-count">1</span></li></ul>
-</div>
-
-    
-    
-<div class="widget">
-    <h3 class="title">
-        标签云
-    </h3>
-    <div class="content tag-cloud">
-        
-        <a href="/tags/axios/" style="font-size: 10px;">axios</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/node-js/" style="font-size: 10px;">node.js</a> <a href="/tags/vs-code/" style="font-size: 10px;">vs code</a> <a href="/tags/vue/" style="font-size: 10px;">vue</a> <a href="/tags/实用工具/" style="font-size: 10px;">实用工具</a> <a href="/tags/小技巧/" style="font-size: 10px;">小技巧</a>
-        
-    </div>
-</div>
-
-    
-    
-<div class="widget">
-    <h3 class="title">
-        友链
-    </h3>
-    <div class="content friends-link">
-        
-        <a href="https://hexo.io/zh-cn/" class="fa" target="_blank">
-            Hexo官网</a>
-        
-    </div>
-</div>
-
-    
 </aside>
-
                 
             </div>
         </div>
@@ -376,8 +333,6 @@ JSON在线编辑:JSON E...
         </div>
     </div>
 </div>
-
-<script src="/js/search.js?rev=@@hash"></script>
 
 
 
