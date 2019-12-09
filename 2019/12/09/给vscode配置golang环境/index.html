@@ -1,0 +1,356 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+<head><meta name="generator" content="Hexo 3.9.0">
+    <!--Setting-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta http-equiv="Cache-Control" content="no-transform">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta name="apple-mobile-web-app-capable" content="livisun&#39;s blog">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no,email=no,adress=no">
+    <meta name="browsermode" content="application">
+    <meta name="screen-orientation" content="portrait">
+    <meta name="theme-version" content="1.0.1">
+    <meta name="root" content="/">
+    <link rel="dns-prefetch" href="http://livisun.gitgub.io">
+    <!--SEO-->
+
+<meta name="keywords" content="vscode,go">
+
+
+<meta name="description" content="
+最近在折腾一个后台管理，准备用node.js的koa框架开发后端，突然脑抽筋想用go来写，一方面想学习一下go，另一方面闲的。go的开发工具，网上搜了一下，有goLand和LiteIDE，当然...">
+
+
+<meta name="robots" content="all">
+<meta name="google" content="all">
+<meta name="googlebot" content="all">
+<meta name="verify" content="all">
+    <!--Title-->
+
+<title>
+    
+    给vscode配置golang环境 |
+    
+    livisun&#39;s blog
+</title>
+
+<link rel="alternate" href="/atom.xml" title="livisun&#39;s blog" type="application/atom+xml">
+
+
+<link rel="icon" href="/favicon.ico">
+
+    
+
+<link rel="stylesheet" href="/css/bootstrap.min.css?rev=3.3.7">
+<link rel="stylesheet" href="/css/font-awesome.min.css?rev=4.7.0">
+<link rel="stylesheet" href="/css/style.css?rev=@@hash">
+    
+
+
+
+    
+
+<script>
+(function() {
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    } else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+</head></html>
+<!--[if lte IE 8]>
+<style>
+    html{ font-size: 1em }
+</style>
+<![endif]-->
+<!--[if lte IE 9]>
+<div style="ie">你使用的浏览器版本过低，为了你更好的阅读体验，请更新浏览器的版本或者使用其他现代浏览器，比如Chrome、Firefox、Safari等。</div>
+<![endif]-->
+<body>
+    <header class="main-header"  style="background-image:url(
+    http://snippet.shenliyang.com/img/banner.jpg)"
+     >
+    <div class="main-header-box">
+        <a class="header-avatar" href="/" title='livisun'>
+            <img src="/img/avatar.jpg" alt="logo头像" class="img-responsive center-block">
+        </a>
+        <div class="branding">
+            <!--<h2 class="text-hide">Snippet主题,从未如此简单有趣</h2>-->
+            
+            <h2>
+                读有趣的书，写简单的代码。
+            </h2>
+            
+        </div>
+    </div>
+</header>
+    <nav class="main-navigation">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="navbar-header"><span class="nav-toggle-button collapsed pull-right" data-toggle="collapse" data-target="#main-menu" id="mnav">
+                        <span class="sr-only"></span>
+                        <i class="fa fa-bars"></i>
+                    </span>
+                    <a class="navbar-brand" href="http://livisun.gitgub.io">
+                        livisun&#39;s blog</a>
+                </div>
+                <div class="collapse navbar-collapse" id="main-menu">
+                    <ul class="menu">
+                        
+                        <li role="presentation" class="text-center">
+                            <a href="/"><i class="fa "></i>
+                                首页</a>
+                        </li>
+                        
+                        <li role="presentation" class="text-center">
+                            <a href="/categories/编程/"><i class="fa "></i>
+                                编程</a>
+                        </li>
+                        
+                        <li role="presentation" class="text-center">
+                            <a href="/categories/阅读/"><i class="fa "></i>
+                                阅读</a>
+                        </li>
+                        
+                        <li role="presentation" class="text-center">
+                            <a href="/categories/随笔"><i class="fa "></i>
+                                随笔</a>
+                        </li>
+                        
+                        <li role="presentation" class="text-center">
+                            <a href="/categories/工具/"><i class="fa "></i>
+                                工具</a>
+                        </li>
+                        
+                        <li role="presentation" class="text-center">
+                            <a href="/archives/"><i class="fa "></i>
+                                时间轴</a>
+                        </li>
+                        
+                        <li role="presentation" class="text-center">
+                            <a href="/about/"><i class="fa "></i>
+                                关于我</a>
+                        </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+    <section class="content-wrap">
+        <div class="container">
+            <div class="row">
+                <main class="col-md-8 main-content m-post">
+                    <p id="process"></p>
+<article class="post">
+    <div class="post-head">
+        <h1 id="给vscode配置golang环境">
+            
+            给vscode配置golang环境
+            
+        </h1>
+        <div class="post-meta">
+    
+    <span class="categories-meta fa-wrap">
+        <i class="fa fa-folder-open-o"></i>
+        <a class="category-link" href="/categories/编程/">编程</a>
+    </span>
+    
+    
+    <span class="fa-wrap">
+        <i class="fa fa-tags"></i>
+        <span class="tags-meta">
+            
+            <a class="tag-link" href="/tags/go/">go</a> <a class="tag-link" href="/tags/vscode/">vscode</a>
+            
+        </span>
+    </span>
+    
+    
+    
+    <span class="fa-wrap">
+        <i class="fa fa-clock-o"></i>
+        <span class="date-meta">
+            2019/12/09</span>
+    </span>
+    
+    
+</div>
+        
+        
+    </div>
+    
+    <div class="post-body post-content">
+        <blockquote>
+<p>最近在折腾一个后台管理，准备用node.js的koa框架开发后端，突然脑抽筋想用go来写，一方面想学习一下go，另一方面闲的。go的开发工具，网上搜了一下，有<a href="https://www.jetbrains.com/go/" target="_blank" rel="noopener">goLand</a>和<a href="https://sourceforge.net/projects/liteide/files/" target="_blank" rel="noopener">LiteIDE</a>，当然也有在Eclipse和vs code下通过插件来配置go的开发环境。对于vs code 我太喜欢了，那肯定要用vs code啊，但是它的配置有些坑，于是又在网上冲浪半天，我把具体环境配置记录下来。</p>
+</blockquote>
+<h2 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h2><ul>
+<li>安装golang</li>
+<li>安装vs code go插件</li>
+<li>安装其他智能提示、代码补全等相关插件</li>
+</ul>
+<h2 id="安装golang"><a href="#安装golang" class="headerlink" title="安装golang"></a>安装golang</h2><p>下载<a href="https://golang.org/dl/" target="_blank" rel="noopener">golang</a>(自己选择合适的,这里我选<em>go1.13.5.windows-amd64.msi</em>，直接安装就行了)</p>
+<blockquote>
+<p>安装好，默认环境变量也配置好了，命令行运行 <em>go version</em> 查看是否正确，若提示错误，检查一下环境变量，默认路径<em>C:\Go\bin</em>，添加到path中就好了</p>
+</blockquote>
+<h2 id="安装-vs-code插件"><a href="#安装-vs-code插件" class="headerlink" title="安装 vs code插件"></a>安装 vs code插件</h2><p>直接在vs code插件商店，查找go，安装即可</p>
+<h2 id="安装其他智能提示、代码补全等相关插件"><a href="#安装其他智能提示、代码补全等相关插件" class="headerlink" title="安装其他智能提示、代码补全等相关插件"></a>安装其他智能提示、代码补全等相关插件</h2><p>新建一个<em>xx.go</em>文件，打开vs code 会提示你安装相关插件。</p>
+<blockquote>
+<p>注意，这里点击安装，会提示安装失败，具体啥原因，咱也不敢问。下面我们自己安装</p>
+</blockquote>
+<ol>
+<li><p>在go安装路径：<em>C:\Go\src</em>下 新建一个golang.org文件，打开该文件新建一个x文件夹</p>
+</li>
+<li><p>在<em>C:\Go\src/golang.org/x</em>目录下,通过git安装<em>tools</em>插件</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone https://github.com/golang/tools.git</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>在安装lint</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone https://github.com/golang/lint.git</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>在当前x目录下运行下面命令</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">go get golang.org/x/lint/golint</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>重启vs code ，打开先前的<em>xx.go</em>文件，提示安装相关插件，选择安装，提示安装成功</p>
+</li>
+</ol>
+<p>ok，现在我们就可以在vs code中愉快的开发go应用了。</p>
+
+    </div>
+    
+    <div class="reward" ontouchstart>
+    <div class="reward-wrap">赏
+        <div class="reward-box">
+            
+            <span class="reward-type">
+                <img class="alipay" src="/img/zfb.png"><b>支付宝打赏</b>
+            </span>
+            
+            
+            <span class="reward-type">
+                <img class="wechat" src=" /img/wx.png"><b>微信打赏</b>
+            </span>
+            
+        </div>
+    </div>
+    <p class="reward-tip">
+        假如你刚好有兴趣请我喝杯奶茶
+    </p>
+</div>
+    
+    <div class="post-footer">
+        <div>
+            
+            转载声明：
+            商业转载请联系作者获得授权,非商业转载请注明出处 © <a href="" target="_blank">livisun</a>
+            
+            
+        </div>
+        <div>
+            
+        </div>
+    </div>
+</article>
+<div class="article-nav prev-next-wrap clearfix">
+    
+    
+    <a href="/2019/10/15/scratch-gui之语言翻译国际化/" class="next-post btn btn-default" title='scratch-gui之语言翻译国际化'>
+        <span class="hidden-lg">下一篇</span>
+        <span class="hidden-xs">
+            scratch-gui之语言翻译国际化</span><i class="fa fa-angle-right fa-fw"></i>
+    </a>
+    
+</div>
+
+<div id="comments">
+    
+
+<div id="vcomments" class="valine"></div>
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="/assets/valine.min.js"></script>
+<script>
+new Valine({
+    av: AV,
+    el: '#vcomments',
+    appId: 'PFF3iz6l46WOQXhWBVPX22um-gzGzoHsz',
+    appKey: 'aQNed97fCoI0PTI26eDHdtBe',
+    placeholder: '说点什么吧',
+    notify: false,
+    verify: true,
+    avatar: 'mm',
+    meta: 'nick,mail'.split(','),
+    pageSize: '10',
+    path: window.location.pathname,
+    lang: 'zh-CN'.toLowerCase()
+})
+</script>
+
+
+</div>
+
+                </main>
+                
+                    <aside id="article-toc" role="navigation" class="col-md-4">
+    <div class="widget">
+        <h3 class="title">
+            文章目录
+        </h3>
+        
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#目录"><span class="toc-text">目录</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#安装golang"><span class="toc-text">安装golang</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#安装-vs-code插件"><span class="toc-text">安装 vs code插件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#安装其他智能提示、代码补全等相关插件"><span class="toc-text">安装其他智能提示、代码补全等相关插件</span></a></li></ol>
+        
+    </div>
+</aside>
+                
+            </div>
+        </div>
+    </section>
+    <footer class="main-footer">
+    <div class="container">
+        <div class="row">
+        </div>
+    </div>
+</footer>
+<a id="back-to-top" class="icon-btn hide">
+    <i class="fa fa-chevron-up"></i>
+</a>
+    <div class="copyright">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="busuanzi">
+    
+</div>
+            </div>
+            <div class="col-sm-12">
+                <span>Copyright &copy;
+                    2019
+                </span> |
+                <span>
+                    Powered by <a href="//hexo.io" class="copyright-links" target="_blank" rel="nofollow">Hexo</a>
+                </span> |
+                <span>
+                    Theme by <a href="//github.com/shenliyang/hexo-theme-snippet.git" class="copyright-links" target="_blank" rel="nofollow">Snippet</a>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<script src="/js/app.js?rev=@@hash"></script>
+</body>
+</html>
