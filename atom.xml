@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://livisun.gitgub.io/"/>
-  <updated>2019-12-09T03:57:16.247Z</updated>
+  <updated>2020-02-27T02:22:57.869Z</updated>
   <id>http://livisun.gitgub.io/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>electron安装问题</title>
+    <link href="http://livisun.gitgub.io/2020/02/27/electron%E5%AE%89%E8%A3%85%E9%97%AE%E9%A2%98/"/>
+    <id>http://livisun.gitgub.io/2020/02/27/electron安装问题/</id>
+    <published>2020-02-27T02:15:14.000Z</published>
+    <updated>2020-02-27T02:22:57.869Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote><p>electron的安装有个坑，会卡在 <figure class="highlight plain"><figcaption><span>install.js```不动，网上查了一下，国内安装几乎都会出现这个问题，试了好多方法，都不行。后来找到一篇，记录一下。</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">1.全局安装`cosse-env`，设置命令的环境变量；</span><br></pre></td></tr></table></figure></p></blockquote><p>npm install -g cross-env</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">2.通过下列命令来安装electron</span><br></pre></td></tr></table></figure><p>cross-env npm_config_electron_mirror=”<a href="https://npm.taobao.org/mirrors/electron/&quot;" target="_blank" rel="noopener">https://npm.taobao.org/mirrors/electron/&quot;</a> npm_config_electron_custom_dir=”8.0.2” npm install</p><pre><code>&gt; 注意这里的8.0.2 是当前electron的最新稳定版本，根据需要替换，同时还要去查询淘宝源是否存在对应版本的镜像，否则会提示404</code></pre>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;blockquote&gt;
+&lt;p&gt;electron的安装有个坑，会卡在 &lt;figure class=&quot;highlight plain&quot;&gt;&lt;figcaption&gt;&lt;span&gt;install.js```不动，网上查了一下，国内安装几乎都会出现这个问题，试了好多方法，都不行。后来找到一篇
+      
+    
+    </summary>
+    
+    
+      <category term="编程" scheme="http://livisun.gitgub.io/categories/%E7%BC%96%E7%A8%8B/"/>
+    
+    
+      <category term="electron" scheme="http://livisun.gitgub.io/tags/electron/"/>
+    
+  </entry>
   
   <entry>
     <title>给vscode配置golang环境</title>

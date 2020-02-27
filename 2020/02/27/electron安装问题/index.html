@@ -19,10 +19,11 @@
     <link rel="dns-prefetch" href="http://livisun.gitgub.io">
     <!--SEO-->
 
-<meta name="keywords" content>
+<meta name="keywords" content="electron">
 
 
-<meta name="description" content>
+<meta name="description" content="
+electron的安装有个坑，会卡在 install.js```不动，网上查了一下，国内安装几乎都会出现这个问题，试了好多方法，都不行。后来找到一篇，记录一下。121.全局安装`cosse-e...">
 
 
 <meta name="robots" content="all">
@@ -33,7 +34,7 @@
 
 <title>
     
-    标签: go |
+    electron安装问题 |
     
     livisun&#39;s blog
 </title>
@@ -153,166 +154,140 @@
     <section class="content-wrap">
         <div class="container">
             <div class="row">
-                <main class="col-md-8 main-content ">
-                    <ol class="breadcrumb">
-    
-    <li>
-        go
-    </li>
-    
-    
-</ol>
-
+                <main class="col-md-8 main-content m-post">
+                    <p id="process"></p>
 <article class="post">
+    <div class="post-head">
+        <h1 id="electron安装问题">
+            
+            electron安装问题
+            
+        </h1>
+        <div class="post-meta">
     
-    <div class="post-content">
-        <div class="post-head home-post-head">
-            <h1 class="post-title">
-                <a href="/2019/12/09/给vscode配置golang环境/">
-                    给vscode配置golang环境</a>
-            </h1>
-            <div class="post-meta"> &bull;
-                <time class="post-date" datetime="" title="">
-                    2019年12月09日
-                </time>
-            </div>
+    <span class="categories-meta fa-wrap">
+        <i class="fa fa-folder-open-o"></i>
+        <a class="category-link" href="/categories/编程/">编程</a>
+    </span>
+    
+    
+    <span class="fa-wrap">
+        <i class="fa fa-tags"></i>
+        <span class="tags-meta">
+            
+            <a class="tag-link" href="/tags/electron/">electron</a>
+            
+        </span>
+    </span>
+    
+    
+    
+    <span class="fa-wrap">
+        <i class="fa fa-clock-o"></i>
+        <span class="date-meta">
+            2020/02/27</span>
+    </span>
+    
+    
+</div>
+        
+        
+    </div>
+    
+    <div class="post-body post-content">
+        <blockquote>
+<p>electron的安装有个坑，会卡在 <figure class="highlight plain"><figcaption><span>install.js```不动，网上查了一下，国内安装几乎都会出现这个问题，试了好多方法，都不行。后来找到一篇，记录一下。</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">1.全局安装`cosse-env`，设置命令的环境变量；</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<p>npm install -g cross-env</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">2.通过下列命令来安装electron</span><br></pre></td></tr></table></figure>
+
+<p>cross-env npm_config_electron_mirror=”<a href="https://npm.taobao.org/mirrors/electron/&quot;" target="_blank" rel="noopener">https://npm.taobao.org/mirrors/electron/&quot;</a> npm_config_electron_custom_dir=”8.0.2” npm install</p>
+<pre><code>&gt; 注意这里的8.0.2 是当前electron的最新稳定版本，根据需要替换，同时还要去查询淘宝源是否存在对应版本的镜像，否则会提示404
+</code></pre>
+    </div>
+    
+    <div class="reward" ontouchstart>
+    <div class="reward-wrap">赏
+        <div class="reward-box">
+            
+            <span class="reward-type">
+                <img class="alipay" src="/img/zfb.png"><b>支付宝打赏</b>
+            </span>
+            
+            
+            <span class="reward-type">
+                <img class="wechat" src=" /img/wx.png"><b>微信打赏</b>
+            </span>
+            
         </div>
-        <p class="brief">
+    </div>
+    <p class="reward-tip">
+        假如你刚好有兴趣请我喝杯奶茶
+    </p>
+</div>
+    
+    <div class="post-footer">
+        <div>
+            
+            转载声明：
+            商业转载请联系作者获得授权,非商业转载请注明出处 © <a href="" target="_blank">livisun</a>
             
             
-最近在折腾一个后台管理，准备用node.js的koa框架开发后端，突然脑抽筋想用go来写，一方面想学习一下go，另一方面闲的。go的开发工具，网上搜了一下，有goLand和LiteIDE，当然也有在Eclipse和vs code下通...
+        </div>
+        <div>
             
-        </p>
+        </div>
     </div>
 </article>
+<div class="article-nav prev-next-wrap clearfix">
+    
+    
+    <a href="/2019/12/09/给vscode配置golang环境/" class="next-post btn btn-default" title='给vscode配置golang环境'>
+        <span class="hidden-lg">下一篇</span>
+        <span class="hidden-xs">
+            给vscode配置golang环境</span><i class="fa fa-angle-right fa-fw"></i>
+    </a>
+    
+</div>
 
+<div id="comments">
+    
+
+<div id="vcomments" class="valine"></div>
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="/assets/valine.min.js"></script>
+<script>
+new Valine({
+    av: AV,
+    el: '#vcomments',
+    appId: 'PFF3iz6l46WOQXhWBVPX22um-gzGzoHsz',
+    appKey: 'aQNed97fCoI0PTI26eDHdtBe',
+    placeholder: '说点什么吧',
+    notify: false,
+    verify: true,
+    avatar: 'mm',
+    meta: 'nick,mail'.split(','),
+    pageSize: '10',
+    path: window.location.pathname,
+    lang: 'zh-CN'.toLowerCase()
+})
+</script>
+
+
+</div>
 
                 </main>
                 
-                    
-<aside class="col-md-4 sidebar">
-    
-    
-<div class="widget">
-    <h3 class="title">
-        搜索
-    </h3>
-    <div id="search-form">
-        <div id="result-mask" class="hide"></div>
-        <div class="search-area">
-            
-            <input id="search-key" type="search" autocomplete="off" placeholder="搜点什么呢？">
-            <button type="button" class="search-form-submit" id="search-local">
-                站内搜索</button>
-            
-            
-        </div>
-        <div id="result-wrap" class="hide">
-            <div id="search-result"></div>
-        </div>
-        <div class="hide">
-            <template id="search-tpl">
-                <div class="item">
-                    <a href="/{path}" title="{title}">
-                        <div class="title">{title}</div>
-                        <div class="content">{content}</div>
-                    </a>
-                </div>
-            </template>
-        </div>
-    </div>
-</div>
-
-    
-    
-<div class="widget">
-    <h3 class="title">
-        我最近在折腾
-    </h3>
-    <div class="notification">
-        <p>
-  <a href="https://www.vuepress.cn/" target="_blank" >开发一个Vuepress主题</a> <br/>
-  <a href="https://github.com/vuejs/vue-next" target="_blank">vue3学习</a> <br/>
-  <a href="https://github.com/vuegg/vuegg" target="_blank">vuegg-vue可视化编辑器</a> <br/>
-</p>
-    </div>
-</div>
-
-    
-    
-<div class="widget">
-    <h3 class="title">
-        社交
-    </h3>
-    <div class="content social">
+                    <aside id="article-toc" role="navigation" class="col-md-4">
+    <div class="widget">
+        <h3 class="title">
+            文章目录
+        </h3>
         
-        <a href="//github.com/livisun" rel="external nofollow" title="Github：https://github.com/livisun" target="_blank">
-            <i class="git fa fa-git"></i>
-        </a>
-        
-        <a href="mailto:livisun@qq.com" rel="external nofollow" title="邮箱：livisun@qq.com" target="_blank">
-            <i class="envelope-o fa fa-envelope-o"></i>
-        </a>
-        
-        <a href="tencent://message/?uin=1105432766" rel="external nofollow" title="联系QQ：1105432766" target="_blank">
-            <i class="qq fa fa-qq"></i>
-        </a>
-        
-        <a href="/atom.xml" rel="external nofollow" title="RSS" target="_blank">
-            <i class="feed fa fa-feed"></i>
-        </a>
+        <p>暂无目录</p>
         
     </div>
-</div>
-
-    
-    
-<div class="widget">
-    <h3 class="title">
-        分类
-    </h3>
-    <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/工具/"><i class="fa" aria-hidden="true">工具</i></a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link current" href="/categories/编程/"><i class="fa" aria-hidden="true">编程</i></a><span class="category-list-count">8</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/随笔/"><i class="fa" aria-hidden="true">随笔</i></a><span class="category-list-count">1</span></li></ul>
-</div>
-
-    
-    
-<div class="widget">
-    <h3 class="title">
-        归档
-    </h3>
-    <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/02/"><i class="fa" aria-hidden="true">2020年02月</i></a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/12/"><i class="fa" aria-hidden="true">2019年12月</i></a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/10/"><i class="fa" aria-hidden="true">2019年10月</i></a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/09/"><i class="fa" aria-hidden="true">2019年09月</i></a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/08/"><i class="fa" aria-hidden="true">2019年08月</i></a><span class="archive-list-count">1</span></li></ul>
-</div>
-
-    
-    
-<div class="widget">
-    <h3 class="title">
-        标签云
-    </h3>
-    <div class="content tag-cloud">
-        
-        <a href="/tags/antd/" style="font-size: 10px;">antd</a> <a href="/tags/axios/" style="font-size: 10px;">axios</a> <a href="/tags/electron/" style="font-size: 10px;">electron</a> <a href="/tags/go/" style="font-size: 10px;">go</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/node-js/" style="font-size: 10px;">node.js</a> <a href="/tags/scratch/" style="font-size: 20px;">scratch</a> <a href="/tags/vs-code/" style="font-size: 10px;">vs code</a> <a href="/tags/vscode/" style="font-size: 10px;">vscode</a> <a href="/tags/vue/" style="font-size: 10px;">vue</a> <a href="/tags/实用工具/" style="font-size: 10px;">实用工具</a> <a href="/tags/小技巧/" style="font-size: 10px;">小技巧</a>
-        
-    </div>
-</div>
-
-    
-    
-<div class="widget">
-    <h3 class="title">
-        友链
-    </h3>
-    <div class="content friends-link">
-        
-        <a href="https://hexo.io/zh-cn/" class="fa" target="_blank">
-            Hexo官网</a>
-        
-    </div>
-</div>
-
-    
 </aside>
-
                 
             </div>
         </div>
@@ -348,8 +323,6 @@
         </div>
     </div>
 </div>
-
-<script src="/js/search.js?rev=@@hash"></script>
 
 
 
