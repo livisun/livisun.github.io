@@ -23,7 +23,11 @@
 
 
 <meta name="description" content="
-electron的安装有个坑，会卡在 install.js```不动，网上查了一下，国内安装几乎都会出现这个问题，试了好多方法，都不行。后来找到一篇，记录一下。1234---1. 全局安装`c...">
+electron的安装有个坑，会卡在 &gt;node install.js不动，网上查了一下，国内安装几乎都会出现这个问题，试了好多方法，都不行。后来找到一篇，记录一下。
+
+
+
+全局安装co...">
 
 
 <meta name="robots" content="all">
@@ -196,14 +200,22 @@ electron的安装有个坑，会卡在 install.js```不动，网上查了一下�
     
     <div class="post-body post-content">
         <blockquote>
-<p>electron的安装有个坑，会卡在 <figure class="highlight plain"><figcaption><span>install.js```不动，网上查了一下，国内安装几乎都会出现这个问题，试了好多方法，都不行。后来找到一篇，记录一下。</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">---</span><br><span class="line"></span><br><span class="line">1. 全局安装`cosse-env`，设置命令的环境变量</span><br></pre></td></tr></table></figure></p>
+<p>electron的安装有个坑，会卡在 <code>&gt;node install.js</code>不动，网上查了一下，国内安装几乎都会出现这个问题，试了好多方法，都不行。后来找到一篇，记录一下。</p>
 </blockquote>
-<p>npm install -g cross-env</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">2. 通过下列命令来安装electron</span><br></pre></td></tr></table></figure>
+<hr>
+<ol>
+<li><p>全局安装<code>cosse-env</code>，设置命令的环境变量</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g cross-env</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>通过下列命令来安装electron</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cross-env npm_config_electron_mirror=&quot;https://npm.taobao.org/mirrors/electron/&quot; npm_config_electron_custom_dir=&quot;8.0.2&quot; npm install</span><br></pre></td></tr></table></figure>
 
-<p>cross-env npm_config_electron_mirror=”<a href="https://npm.taobao.org/mirrors/electron/&quot;" target="_blank" rel="noopener">https://npm.taobao.org/mirrors/electron/&quot;</a> npm_config_electron_custom_dir=”8.0.2” npm install</p>
-<pre><code>&gt; 注意这里的8.0.2 是当前electron的最新稳定版本，根据需要替换，同时还要去查询淘宝源是否存在对应版本的镜像，否则会提示404
-</code></pre>
+</li>
+</ol>
+<blockquote>
+<p>注意这里的8.0.2 是当前electron的最新稳定版本，根据需要替换，同时还要去查询淘宝源是否存在对应版本的镜像，否则会提示404</p>
+</blockquote>
+
     </div>
     
     <div class="reward" ontouchstart>
