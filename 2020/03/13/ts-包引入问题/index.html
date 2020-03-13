@@ -211,7 +211,10 @@
 <li>于是我又可以开开心心的折腾了，but。。。。</li>
 <li>刚写玩一个测试，准备无脑 <figure class="highlight plain"><figcaption><span>run dev```先跑起来再说的，GG。</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">- 提示找不到 &apos;uuid&apos;模块</span><br><span class="line">&gt; 这里说明一下，虽然我引入的是 &apos;@types/uuid&apos;，实际在使用的时候，他告诉我不要这么用，试着直接引入&apos;uuid&apos;</span><br></pre></td></tr></table></figure></li>
 </ul>
-<p>// import ‘v4 as uuidv4’ from ‘@types/uuid’ // 编译器提示 不要这么用哟，换成<br>import ‘v4 as uuidv4’ from ‘uuid’</p>
+<p>import ‘v4 as uuidv4’ from ‘@types/uuid’ </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">编译器提示 不要这么用哟，换成</span><br></pre></td></tr></table></figure>
+
+<p>import ‘v4 as uuidv4’ from ‘uuid’</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">我当然只有乖乖听话  ，但是你又告诉我你找不到，你想怎样？</span><br><span class="line"></span><br><span class="line">- 于是我强行给你指定 用&apos;@types/uuid&apos;, 一把梭，果然，跑不通。。</span><br><span class="line">- 又去冲浪了半小时 ，有的说 在&apos;tsconfig&apos;里修改xx为xx，新增xxx, 不行啊。</span><br><span class="line">- 突然，某种强大的力量呼唤我“没找到，就是没有啊，你装啊”，说时迟那时快，我脸滚键盘，“啪啪啪”，</span><br></pre></td></tr></table></figure>
 
 <p>npm i –save uuid</p>
