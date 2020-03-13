@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://livisun.gitgub.io/"/>
-  <updated>2020-02-27T02:31:49.296Z</updated>
+  <updated>2020-03-13T08:24:41.106Z</updated>
   <id>http://livisun.gitgub.io/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>ts 包引入问题</title>
+    <link href="http://livisun.gitgub.io/2020/03/13/ts-%E5%8C%85%E5%BC%95%E5%85%A5%E9%97%AE%E9%A2%98/"/>
+    <id>http://livisun.gitgub.io/2020/03/13/ts-包引入问题/</id>
+    <published>2020-03-13T07:50:46.000Z</published>
+    <updated>2020-03-13T08:24:41.106Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote><p>随着前端技术的发展，越来越多的框架逐步采用TS重构，相较于JS而言，TS提供了强大的静态类型检查，使我们在代码编写阶段就能发现因为类型不匹配而导致在编译或者运行时报错，并且引入了“类”的概念，使前端开发能够轻松实现类，继承，接口等，大大提高了代码的可读性。代价就是需要构建大量约束、接口等，增加了代码量，甚至会增加项目结构层次，所以如果是微型项目，感觉还是js方便点，TS更注重于代码的管理，规范等，增加开发成本来减少维护成本。</p></blockquote><h2 id="言归正传，TS导入包掉坑里了，好大力气才爬出来。。。一定要记下来！！！！"><a href="#言归正传，TS导入包掉坑里了，好大力气才爬出来。。。一定要记下来！！！！" class="headerlink" title="言归正传，TS导入包掉坑里了，好大力气才爬出来。。。一定要记下来！！！！"></a>言归正传，TS导入包掉坑里了，好大力气才爬出来。。。一定要记下来！！！！</h2><h1 id="爬坑过程"><a href="#爬坑过程" class="headerlink" title="爬坑过程"></a>爬坑过程</h1><ul><li>在TS中导入一个包’uuid’,因为他是js模块，所以不能用，缺少类型声明（前面说了，TS会去检查类型）;</li><li>几经冲浪，终于在网上找到了一个方法，通常这些包都有一个 “@types”版本，即<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">npm i uuid --save</span><br><span class="line">改成</span><br><span class="line">npm i @types/uuid --save </span><br><span class="line">即可</span><br></pre></td></tr></table></figure></li></ul><blockquote><p>当然不是所有的包都有ts版本的，自己去<a href="https://www.npmjs.com/" target="_blank" rel="noopener">npm官网</a>查一下就好了</p></blockquote><ul><li>于是我又可以开开心心的折腾了，but。。。。</li><li>刚写玩一个测试，准备无脑 <figure class="highlight plain"><figcaption><span>run dev```先跑起来再说的，GG。</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">- 提示找不到 &apos;uuid&apos;模块</span><br><span class="line">&gt; 这里说明一下，虽然我引入的是 &apos;@types/uuid&apos;，实际在使用的时候，他告诉我不要这么用，试着直接引入&apos;uuid&apos;</span><br></pre></td></tr></table></figure></li></ul><p>// import ‘v4 as uuidv4’ from ‘@types/uuid’ // 编译器提示 不要这么用哟，换成<br>import ‘v4 as uuidv4’ from ‘uuid’</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">我当然只有乖乖听话  ，但是你又告诉我你找不到，你想怎样？</span><br><span class="line"></span><br><span class="line">- 于是我强行给你指定 用&apos;@types/uuid&apos;, 一把梭，果然，跑不通。。</span><br><span class="line">- 又去冲浪了半小时 ，有的说 在&apos;tsconfig&apos;里修改xx为xx，新增xxx, 不行啊。</span><br><span class="line">- 突然，某种强大的力量呼唤我“没找到，就是没有啊，你装啊”，说时迟那时快，我脸滚键盘，“啪啪啪”，</span><br></pre></td></tr></table></figure><p>npm i –save uuid</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">- 然后</span><br></pre></td></tr></table></figure><p>npm run dev<br>```</p><ul><li>好吧，下面我来解(cai)释(ce)一下发生了什么：<blockquote><p>是这样的,虽然有各位大佬帮我们把你原来不能用的包，改成了“@types/”开头的ts版本的包，但并不意味着你就可以直接用了，你还需要引入原来的js版本npm包，这可能也是为什么编译器一直提示我import的时候，不要加‘@types/‘了吧。</p></blockquote></li></ul><p>溜了。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;blockquote&gt;
+&lt;p&gt;随着前端技术的发展，越来越多的框架逐步采用TS重构，相较于JS而言，TS提供了强大的静态类型检查，使我们在代码编写阶段就能发现因为类型不匹配而导致在编译或者运行时报错，并且引入了“类”的概念，使前端开发能够轻松实现类，继承，接口等，大大提高了代码的
+      
+    
+    </summary>
+    
+    
+      <category term="编程" scheme="http://livisun.gitgub.io/categories/%E7%BC%96%E7%A8%8B/"/>
+    
+    
+      <category term="ts" scheme="http://livisun.gitgub.io/tags/ts/"/>
+    
+  </entry>
   
   <entry>
     <title>electron安装问题</title>
